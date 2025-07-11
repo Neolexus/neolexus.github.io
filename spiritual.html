@@ -7,41 +7,204 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Existing styles from landing page */
-        :root, body, .header, .nav-container, .logo, .nav-menu, .hero, .section-title, .footer {
-            /* Maintain all existing variables and base styles */
+        /* All existing variables and base styles from index.html */
+        :root {
+            --sapphire: #0A2463;
+            --gold: #D4AF37;
+            --gold-light: #e6c875;
+            --ivory: #F8F4E9;
+            --charcoal: #1E1E1E;
+            --sand: #E6D5B8;
+            --obsidian: #0c0c16;
+            --bronze: #CD7F32;
+            --velvet: #1a0d2e;
         }
         
-        /* SPIRITUAL PAGE SPECIFIC STYLES */
-        .spiritual-hero {
-            height: 80vh;
-            background: linear-gradient(rgba(12, 12, 22, 0.85), url('https://images.unsplash.com/photo-1506260408121-e353d10b87c7') center/cover;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ivory);
+            background: var(--obsidian);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(10, 36, 99, 0.1) 0%, transparent 20%);
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSgyMTIsIDE3NSwgNTUsIDAuMDcpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+            opacity: 0.2;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(12, 12, 22, 0.85);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .header.scrolled {
+            background: rgba(12, 12, 22, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+            position: relative;
             display: flex;
             align-items: center;
-            text-align: center;
+        }
+        
+        .logo::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-left: 12px;
+            animation: pulse 2s infinite;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 40px;
+            position: relative;
+        }
+        
+        .nav-menu a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--ivory);
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            transition: all 0.4s;
+            position: relative;
+            text-transform: uppercase;
+            padding: 10px 0;
+            opacity: 0.9;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+            transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section - Custom for Spiritual Page */
+        .spiritual-hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
             padding: 0 5%;
+            background: linear-gradient(rgba(12, 12, 22, 0.85), url('https://images.unsplash.com/photo-1506260408121-e353d10b87c7') center/cover;
+        }
+        
+        .spiritual-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 80px;
+            text-align: center;
+        }
+        
+        .spiritual-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 30px;
+            opacity: 0.8;
         }
         
         .spiritual-title {
-            font-size: 5.5rem;
-            max-width: 1000px;
-            margin: 0 auto 30px;
+            font-size: 82px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
             line-height: 1.1;
             text-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
         }
         
         .spiritual-subtitle {
-            font-size: 2.2rem;
-            font-style: italic;
+            font-size: 28px;
             max-width: 800px;
             margin: 0 auto 50px;
+            font-style: italic;
             opacity: 0.9;
             font-weight: 300;
         }
         
+        /* Journey Sections */
         .journey-section {
-            padding: 100px 5%;
+            padding: 120px 5%;
             background: var(--velvet);
+            position: relative;
         }
         
         .journey-container {
@@ -159,10 +322,30 @@
             color: var(--gold);
         }
         
+        /* Custom Journey Section */
         .custom-journey {
-            background: var(--obsidian);
-            padding: 120px 5%;
+            padding: 150px 5%;
             text-align: center;
+            position: relative;
+            background: var(--obsidian);
+        }
+        
+        .section-title {
+            font-size: 52px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: var(--gold);
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .custom-grid {
@@ -210,8 +393,9 @@
             color: var(--gold);
         }
         
+        /* CTA Section */
         .cta-section {
-            padding: 100px 5%;
+            padding: 150px 5%;
             text-align: center;
             background: linear-gradient(rgba(12, 12, 22, 0.9), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') center/cover;
         }
@@ -222,7 +406,7 @@
             margin: 0 auto 40px;
         }
         
-        .cta-button {
+        .hero-btn {
             background: transparent;
             color: var(--gold);
             border: 2px solid var(--gold);
@@ -239,7 +423,7 @@
             z-index: 1;
         }
         
-        .cta-button:before {
+        .hero-btn::before {
             content: '';
             position: absolute;
             top: 0;
@@ -251,15 +435,57 @@
             transition: width 0.5s ease;
         }
         
-        .cta-button:hover:before {
+        .hero-btn:hover::before {
             width: 100%;
         }
         
-        .cta-button:hover {
+        .hero-btn:hover {
             color: var(--charcoal);
         }
         
-        /* Responsive adjustments */
+        .btn-primary {
+            background: var(--gold);
+            color: var(--charcoal);
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold-light);
+        }
+        
+        /* Floating Curator Button */
+        .floating-curator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: var(--gold);
+            color: var(--charcoal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-curator:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5);
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        
+        /* Mobile Responsiveness */
         @media (max-width: 992px) {
             .journey-card {
                 grid-template-columns: 1fr;
@@ -286,30 +512,55 @@
             .spiritual-subtitle {
                 font-size: 1.6rem;
             }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav-menu {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-menu li {
+                margin: 0 15px 15px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header (Same as landing page) -->
-    <header class="header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">ANOQI</a>
-            <ul class="nav-menu">
-                <li><a href="safaris.html">Safaris</a></li>
-                <li><a href="experiences.html">Experiences</a></li>
-                <li><a href="spiritual.html" class="active">Mind & Spirit</a></li>
-                <li><a href="vip.html">VIP Travel</a></li>
-                <li><a href="about.html">Our Story</a></li>
-                <li><a href="contact.html">Enquire</a></li>
+    <!-- Floating Curator Button -->
+    <div class="floating-curator">
+        <i class="fas fa-compass"></i>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class='header' id='header'>
+        <div class='nav-container'>
+            <a href='/' class='logo'>ANOQI</a>
+            <ul class='nav-menu'>
+                <li><a href='experiences.html'>Experiences</a></li>
+                <li><a href='paranormal.html'>Paranormal</a></li>
+                <li><a href='spiritual.html' class="active">Mind-Body Escapes</a></li>
+                <li><a href='about.html'>About You</a></li>
+                <li><a href='journal.html'>Field Notes</a></li>
+                <li><a href='concierge.html'>Concierge</a></li>
             </ul>
         </div>
     </header>
 
     <!-- Spiritual Hero Section -->
-    <section class="spiritual-hero">
-        <div class="hero-content">
-            <h1 class="spiritual-title">Mind, Body & Spirit Journeys</h1>
-            <p class="spiritual-subtitle">Southern Africa's Soul in Ritual, Rhythm, and Revelation</p>
+    <section class='spiritual-hero'>
+        <div class='spiritual-content'>
+            <div class="spiritual-tagline">SOUL JOURNEYS & SACRED ENCOUNTERS</div>
+            <h1 class='spiritual-title'>Mind, Body & Spirit Journeys</h1>
+            <p class='spiritual-subtitle'>Southern Africa's Soul in Ritual, Rhythm, and Revelation</p>
             <div class="hero-buttons">
                 <button class="hero-btn btn-primary">Craft Your Journey</button>
                 <button class="hero-btn">Explore Experiences</button>
@@ -396,14 +647,37 @@
                 </div>
             </div>
             
-            <!-- Additional sections would follow the same pattern -->
+            <!-- Ceremonial Traditions Section -->
+            <div class="journey-card">
+                <div class="journey-image">
+                    <img src="https://images.unsplash.com/photo-1580327344181-c1163234e5a0" alt="Sacred dance">
+                </div>
+                <div class="journey-content">
+                    <div class="journey-icon">🪘</div>
+                    <h2 class="journey-heading">Fire, Smoke & Sacred Dance</h2>
+                    <h3 class="journey-subheading">Zulu, Xhosa, Shona Ceremonial Traditions</h3>
+                    <p class="journey-description">Drums echo. A goat is offered. Dancers blur the line between this world and the next.</p>
+                    
+                    <p class="journey-description">These ceremonies mark life, death, healing, and new seasons. Sometimes public, sometimes deeply private. When you're invited in—it's magic.</p>
+                    
+                    <div class="journey-highlights">
+                        <ul>
+                            <li><strong>Isangoma trances</strong> (South Africa)</li>
+                            <li><strong>Rainmaking ceremonies</strong> (Zimbabwe)</li>
+                            <li><strong>Umhlanga reed dance</strong> (Eswatini)</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="journey-description">You don't just watch. You feel it in your chest.</p>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Custom Journey Section -->
     <section class="custom-journey">
         <h2 class="section-title">Customize Your Spiritual Safari</h2>
-        <p class="vip-subtitle">No two souls are the same. That's why our mind-body escapes are built around you.</p>
+        <p class="spiritual-subtitle">No two souls are the same. That's why our mind-body escapes are built around you.</p>
         
         <div class="custom-grid">
             <div class="custom-option">
@@ -429,23 +703,75 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <h2 class="cta-title">Ready to Begin Your Spiritual Awakening?</h2>
-        <button class="cta-button">Speak to a Journey Curator</button>
+        <button class="hero-btn btn-primary">Speak to a Journey Curator</button>
     </section>
     
-    <!-- Footer (Same as landing page) -->
-    <footer class="footer">
-        <!-- Footer content from landing page -->
+    <!-- Footer -->
+    <footer class='footer'>
+        <div class='footer-grid'>
+            <div class="footer-brand">
+                <a href='/' class='footer-logo'>ANOQI</a>
+                <p class='footer-about'>Crafting unrepeatable moments across Africa's most extraordinary locations since 2018. For those who seek more than destinations.</p>
+                <div class='social-links'>
+                    <a href='#'><i class='fab fa-instagram'></i></a>
+                    <a href='#'><i class='fab fa-pinterest'></i></a>
+                    <a href='#'><i class='fab fa-twitter'></i></a>
+                </div>
+            </div>
+            
+            <div class='footer-col'>
+                <h3 class='footer-title'>Explore</h3>
+                <ul class='footer-links'>
+                    <li><a href='experiences.html'>Signature Experiences</a></li>
+                    <li><a href='paranormal.html'>Paranormal Journeys</a></li>
+                    <li><a href='spiritual.html'>Mind-Body Escapes</a></li>
+                    <li><a href='#'>One-Night Miracles</a></li>
+                    <li><a href='#'>Forbidden Africa</a></li>
+                </ul>
+            </div>
+            
+            <div class='footer-col'>
+                <h3 class='footer-title'>Anoqi</h3>
+                <ul class='footer-links'>
+                    <li><a href='about.html'>About You</a></li>
+                    <li><a href='journal.html'>Field Notes</a></li>
+                    <li><a href='#'>The Ritual</a></li>
+                    <li><a href='#'>Legacy Journeys</a></li>
+                    <li><a href='#'>Things We Don't Do</a></li>
+                </ul>
+            </div>
+            
+            <div class='footer-col'>
+                <h3 class='footer-title'>Concierge</h3>
+                <ul class='footer-links'>
+                    <li><a href='mailto:curator@anoqi.africa'>curator@anoqi.africa</a></li>
+                    <li><a href='tel:+27111222333'>+27 11 122 2333</a></li>
+                    <li><a href='concierge.html'>Bespoke Request</a></li>
+                    <li><a href='#'>24/7 Emergency Line</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class='footer-bottom'>
+            <p>&copy; 2023 Anoqi Africa. All experiences are invitation-only and subject to availability. | Designed for the Unrepeatable Life</p>
+        </div>
     </footer>
 
     <script>
-        // Header scroll effect
+        // Sticky Header
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
+            const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+        
+        // Floating button interaction
+        const floatingBtn = document.querySelector('.floating-curator');
+        floatingBtn.addEventListener('click', function() {
+            window.location.href = 'concierge.html';
         });
         
         // Image hover effect enhancement
