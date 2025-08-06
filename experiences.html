@@ -374,9 +374,11 @@
         }
         
         .experiences-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 800px; 
+            margin: 0 auto;
         }
         
         .experience-card {
