@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onayi Africa | Beyond Imagination</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>●</text></svg>" type="image/svg+xml" style="color: #D4AF37;">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -35,6 +36,7 @@
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(10, 36, 99, 0.1) 0%, transparent 20%);
+            font-size: 21px; /* Increased base font size by 5% */
         }
         
         body::before {
@@ -177,7 +179,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(12, 12, 22, 0.8) 0%, rgba(12, 12, 22, 0.4) 100%);
+            background: linear-gradient(to bottom, rgba(12, 12, 22, 0.6) 0%, rgba(12, 12, 22, 0.3) 100%);
             z-index: -1;
         }
         
@@ -193,7 +195,7 @@
         .hero-tagline {
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
-            font-size: 20px;
+            font-size: 21px; /* Increased by 5% */
             letter-spacing: 5px;
             text-transform: uppercase;
             color: var(--gold);
@@ -214,7 +216,7 @@
         }
         
         .hero-title {
-            font-size: 45px;
+            font-size: 47.25px; /* Increased by 5% */
             font-weight: 700;
             margin-bottom: 30px;
             letter-spacing: 1px;
@@ -224,7 +226,7 @@
         }
         
         .hero-subtitle {
-            font-size: 28px;
+            font-size: 29.4px; /* Increased by 5% */
             max-width: 700px;
             margin-bottom: 50px;
             font-style: italic;
@@ -248,7 +250,7 @@
             cursor: pointer;
             transition: all 0.4s;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 14.7px; /* Increased by 5% */
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -285,17 +287,30 @@
         
         /* Status Builder */
         .status-section {
-            padding: 120px 5%;
+            padding: 100px 5%; /* Reduced padding to close gap */
             text-align: center;
             position: relative;
             padding-top: 60px;            
+            background: url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Private%20cave%20suite.jpg') no-repeat center center / cover;
+        }
+        
+        .status-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 12, 22, 0.8);
+            z-index: 0;
         }
         
         .status-heading {
-            font-size: 42px;
+            font-size: 44.1px; /* Increased by 5% */
             margin-bottom: 80px;
             position: relative;
             display: inline-block;
+            z-index: 1;
         }
         
         .status-heading::after {
@@ -315,10 +330,12 @@
             gap: 40px;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .testimonial-card {
-            background: rgba(26, 13, 46, 0.5);
+            background: rgba(26, 13, 46, 0.7);
             border: 1px solid rgba(212, 175, 55, 0.2);
             padding: 40px 30px;
             position: relative;
@@ -344,7 +361,7 @@
         }
         
         .testimonial-text {
-            font-size: 20px;
+            font-size: 21px; /* Increased by 5% */
             font-style: italic;
             margin-bottom: 25px;
             position: relative;
@@ -356,21 +373,34 @@
             font-weight: 600;
             letter-spacing: 1px;
             color: var(--gold);
-            font-size: 16px;
+            font-size: 16.8px; /* Increased by 5% */
         }
         
         /* Experiences Grid */
         .experiences-section {
-            padding: 120px 5%;
+            padding: 80px 5%; /* Reduced padding to close gap */
             position: relative;
             overflow: hidden;
+            background: url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/The%20Crater%20Camp%20Overnight%20-%20Kilimanjaro.png') no-repeat center center / cover;
+        }
+        
+        .experiences-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 12, 22, 0.85);
+            z-index: 0;
         }
         
         .section-title {
-            font-size: 52px;
+            font-size: 54.6px; /* Increased by 5% */
             text-align: center;
             margin-bottom: 80px;
             position: relative;
+            z-index: 1;
         }
         
         .section-title::after {
@@ -390,6 +420,8 @@
             gap: 40px;
             max-width: 800px; 
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .experience-card {
@@ -428,13 +460,13 @@
         }
         
         .experience-title {
-            font-size: 28px;
+            font-size: 29.4px; /* Increased by 5% */
             margin-bottom: 15px;
             font-weight: 700;
         }
         
         .experience-description {
-            font-size: 18px;
+            font-size: 18.9px; /* Increased by 5% */
             margin-bottom: 20px;
             font-style: italic;
             opacity: 0.9;
@@ -450,7 +482,7 @@
             cursor: pointer;
             transition: all 0.4s;
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 13.65px; /* Increased by 5% */
             letter-spacing: 2px;
             display: inline-flex;
             align-items: center;
@@ -478,7 +510,7 @@
         }
         
         .ritual-title {
-            font-size: 42px;
+            font-size: 44.1px; /* Increased by 5% */
             text-align: center;
             margin-bottom: 100px;
             color: var(--gold);
@@ -513,18 +545,18 @@
             align-items: center;
             justify-content: center;
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 29.4px; /* Increased by 5% */
             font-weight: 700;
         }
         
         .ritual-step h3 {
-            font-size: 24px;
+            font-size: 25.2px; /* Increased by 5% */
             margin-bottom: 20px;
             color: var(--gold);
         }
         
         .ritual-step p {
-            font-size: 18px;
+            font-size: 18.9px; /* Increased by 5% */
             opacity: 0.9;
         }
         
@@ -533,6 +565,18 @@
             padding: 150px 5%;
             text-align: center;
             position: relative;
+            background: url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/HeliPNG%20and%20champagne%20over%20a%20flaming%20Namibian%20desert.png') no-repeat center center / cover;
+        }
+        
+        .vip-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 12, 22, 0.85);
+            z-index: 0;
         }
         
         .vip-container {
@@ -543,12 +587,12 @@
         }
         
         .vip-title {
-            font-size: 42px;
+            font-size: 44.1px; /* Increased by 5% */
             margin-bottom: 40px;
         }
         
         .vip-subtitle {
-            font-size: 24px;
+            font-size: 25.2px; /* Increased by 5% */
             margin-bottom: 60px;
             opacity: 0.9;
         }
@@ -561,7 +605,7 @@
         }
         
         .vip-feature {
-            background: rgba(26, 13, 46, 0.5);
+            background: rgba(26, 13, 46, 0.7);
             border: 1px solid rgba(212, 175, 55, 0.2);
             padding: 40px 20px;
             transition: all 0.4s;
@@ -573,14 +617,18 @@
         }
         
         .vip-feature i {
-            font-size: 48px;
+            font-size: 50.4px; /* Increased by 5% */
             color: var(--gold);
             margin-bottom: 20px;
         }
         
         .vip-feature h3 {
-            font-size: 22px;
+            font-size: 23.1px; /* Increased by 5% */
             margin-bottom: 15px;
+        }
+        
+        .vip-feature p {
+            font-size: 18.9px; /* Increased by 5% */
         }
         
         /* Footer */
@@ -615,7 +663,7 @@
         }
         
         .footer-about {
-            font-size: 16px;
+            font-size: 16.8px; /* Increased by 5% */
             line-height: 1.8;
             opacity: 0.8;
             margin-bottom: 30px;
@@ -649,7 +697,7 @@
         .footer-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 18.9px; /* Increased by 5% */
             margin-bottom: 25px;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -681,7 +729,7 @@
             text-decoration: none;
             opacity: 0.8;
             transition: all 0.3s;
-            font-size: 17px;
+            font-size: 17.85px; /* Increased by 5% */
             display: inline-block;
         }
         
@@ -696,7 +744,7 @@
             padding-top: 50px;
             margin-top: 50px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 15px;
+            font-size: 15.75px; /* Increased by 5% */
             opacity: 0.6;
         }
         
@@ -736,11 +784,11 @@
         /* Mobile Responsiveness */
         @media (max-width: 992px) {
             .hero-title {
-                font-size: 72px;
+                font-size: 75.6px; /* Increased by 5% */
             }
             
             .hero-subtitle {
-                font-size: 24px;
+                font-size: 25.2px; /* Increased by 5% */
             }
             
             .nav-menu li {
@@ -765,11 +813,11 @@
             }
             
             .hero-title {
-                font-size: 52px;
+                font-size: 54.6px; /* Increased by 5% */
             }
             
             .hero-subtitle {
-                font-size: 20px;
+                font-size: 21px; /* Increased by 5% */
             }
             
             .hero-buttons {
@@ -778,7 +826,7 @@
             }
             
             .section-title {
-                font-size: 36px;
+                font-size: 37.8px; /* Increased by 5% */
             }
             
             .experiences-grid {
@@ -786,7 +834,7 @@
             }
             
             .ritual-title, .vip-title {
-                font-size: 36px;
+                font-size: 37.8px; /* Increased by 5% */
             }
         }
     </style>
@@ -816,7 +864,7 @@
     
     <!-- Hero Section -->
     <section class="hero" style="background: url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Glass%20dome%20in%20desert.jpg') no-repeat center center / cover; height: 100vh; position: relative;">
-    <div class='hero-overlay' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 1;"></div>
+    <div class='hero-overlay' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.3); z-index: 1;"></div>
     <div class='hero-content' style="position: relative; z-index: 2;">
         <div class="hero-tagline">PRIVATE ACCESS & BESPOKE JOURNEYS</div>
         <h1 class='hero-title'>Where Africa Reveals Her Best-Kept Secrets</h1>
@@ -959,7 +1007,7 @@ The mountain has secrets—and tonight, they’re yours.</p>
                     <li><a href='paranormal.html'>Paranormal Journeys</a></li>
                     <li><a href='spiritual.html'>Mind-Body Escapes</a></li>
                     <li><a href='experiences.html'>Epic Safari</a></li>
-                    <li><a href='#'>Forbidden Africa</a></li>
+                    <li><a href='#'>Insane Locations</a></li> <!-- Changed from Forbidden Africa -->
                 </ul>
             </div>
             
