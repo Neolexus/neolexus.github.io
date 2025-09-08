@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onayi Africa | Paranormal Journeys</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. Gold dot favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23D4AF37%22/%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -19,13 +21,7 @@
             --velvet: #1a0d2e;
             --mystic: #1c1127;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Cormorant Garamond', serif;
             color: var(--ivory);
@@ -33,11 +29,11 @@
             line-height: 1.8;
             overflow-x: hidden;
             position: relative;
+            font-size: 105%; /* 2. Increase font by 5%, titles unchanged */
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(10, 36, 99, 0.1) 0%, transparent 20%);
         }
-        
         body::before {
             content: '';
             position: fixed;
@@ -50,21 +46,12 @@
             z-index: -1;
             pointer-events: none;
         }
-        
-        /* Typography */
         h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             letter-spacing: 0.5px;
+            font-size: revert; /* Don't scale headings */
         }
-        
-        /* Layout */
-        .container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-        
         /* Header & Navigation */
         .header {
             position: fixed;
@@ -76,19 +63,11 @@
             transition: all 0.5s ease;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-        
         .header.scrolled {
             background: rgba(12, 12, 22, 0.95);
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
         }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 32px;
@@ -100,7 +79,6 @@
             display: flex;
             align-items: center;
         }
-        
         .logo::after {
             content: '';
             display: block;
@@ -111,17 +89,8 @@
             margin-left: 12px;
             animation: pulse 2s infinite;
         }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 40px;
-            position: relative;
-        }
-        
+        .nav-menu { display: flex; list-style: none; }
+        .nav-menu li { margin-left: 40px; position: relative; }
         .nav-menu a {
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
@@ -135,12 +104,10 @@
             padding: 10px 0;
             opacity: 0.9;
         }
-        
         .nav-menu a:hover {
             color: var(--gold);
             opacity: 1;
         }
-        
         .nav-menu a::after {
             content: '';
             position: absolute;
@@ -151,11 +118,7 @@
             left: 0;
             transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
+        .nav-menu a:hover::after { width: 100%; }
         /* Hero Section */
         .paranormal-hero {
             height: 100vh;
@@ -168,15 +131,7 @@
             background-position: center;
             background-attachment: fixed;
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            padding-top: 120px;
-            text-align: center;
-        }
-        
+        .hero-content { position: relative; z-index: 1; max-width: 1200px; padding-top: 120px; text-align: center; }
         .hero-tagline {
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
@@ -187,7 +142,6 @@
             margin-bottom: 30px;
             opacity: 0.8;
         }
-        
         .hero-title {
             font-size: 62px;
             font-weight: 700;
@@ -196,7 +150,6 @@
             line-height: 1.1;
             text-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
         }
-        
         .hero-subtitle {
             font-size: 24px;
             max-width: 800px;
@@ -205,7 +158,6 @@
             opacity: 0.9;
             font-weight: 300;
         }
-        
         .hero-warning {
             display: inline-block;
             border: 1px solid var(--gold);
@@ -214,7 +166,6 @@
             font-style: italic;
             position: relative;
         }
-        
         .hero-warning::before {
             content: '⚠️';
             position: absolute;
@@ -224,7 +175,6 @@
             background: var(--obsidian);
             padding: 0 10px;
         }
-        
         .btn {
             background: transparent;
             color: var(--ivory);
@@ -243,55 +193,35 @@
             text-decoration: none;
             display: inline-block;
         }
-        
         .btn::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--gold);
-            z-index: -1;
+            top: 0; left: 0; width: 0; height: 100%;
+            background: var(--gold); z-index: -1;
             transition: width 0.5s ease;
         }
-        
-        .btn:hover::before {
-            width: 100%;
-        }
-        
-        .btn:hover {
-            color: var(--charcoal);
-        }
-        
-        .btn-primary {
-            background: var(--gold);
-            color: var(--charcoal);
-        }
-        
-        .btn-primary:hover {
-            background: var(--gold-light);
-        }
-        
+        .btn:hover::before { width: 100%; }
+        .btn:hover { color: var(--charcoal); }
+        .btn-primary { background: var(--gold); color: var(--charcoal);}
+        .btn-primary:hover { background: var(--gold-light);}
         /* Philosophy Section */
         .philosophy-section {
             padding: 100px 0;
             background: var(--mystic);
             text-align: center;
         }
-        
         .philosophy-container {
             max-width: 800px;
             margin: 0 auto;
         }
-        
         .section-title {
             font-size: 52px;
             margin-bottom: 40px;
             position: relative;
             display: inline-block;
+            width: 100%;
+            text-align: center;
         }
-        
         .section-title::after {
             content: '';
             position: absolute;
@@ -302,56 +232,34 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
         .philosophy-text {
             font-size: 20px;
             margin-bottom: 40px;
             opacity: 0.9;
+            text-align: center;
         }
-        
-        .principle-card {
-            background: rgba(26, 13, 46, 0.5);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 40px 30px;
-            margin: 30px 0;
-            transition: all 0.4s;
-        }
-        
-        .principle-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.5);
-        }
-        
-        .principle-icon {
-            font-size: 48px;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        
-        .principle-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--gold);
-        }
-        
         /* Experience Packages */
         .packages-section {
             padding: 100px 0;
             background: var(--velvet);
         }
-        
         .packages-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+        .packages-section .section-title,
+        .packages-section .philosophy-text {
+            text-align: center; /* 4. Center section title and subtitle/text */
+            width: 100%;
+            margin: 0 auto 25px auto;
+            display: block;
+        }
         .package-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 50px;
-            margin-top: 80px;
+            margin-top: 40px;
         }
-        
         .package-card {
             background: rgba(26, 13, 46, 0.5);
             border: 1px solid rgba(212, 175, 55, 0.2);
@@ -360,25 +268,21 @@
             transition: all 0.4s;
             position: relative;
         }
-        
         .package-card:hover {
             transform: translateY(-15px);
             border-color: rgba(212, 175, 55, 0.5);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
         .package-header {
             padding: 30px;
             background: rgba(12, 12, 22, 0.7);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-        
         .package-title {
             font-size: 32px;
             margin-bottom: 10px;
             color: var(--gold);
         }
-        
         .package-location {
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
@@ -388,57 +292,15 @@
             align-items: center;
             gap: 10px;
         }
-        
-        .package-content {
-            padding: 30px;
-        }
-        
-        .package-features {
-            margin-bottom: 30px;
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        
+        .package-content { padding: 30px; }
+        .package-features { margin-bottom: 30px; }
+        .feature-list { list-style: none; padding: 0; }
         .feature-list li {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            align-items: flex-start;
+            display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start;
         }
-        
-        .feature-icon {
-            color: var(--gold);
-            min-width: 24px;
-            padding-top: 5px;
-        }
-        
-        .package-price {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 22px;
-            color: var(--gold);
-            margin-bottom: 25px;
-        }
-        
-        .luxury-upgrade {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--gold);
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .upgrade-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
+        .feature-icon { color: var(--gold); min-width: 24px; padding-top: 5px;}
+        /* REMOVE PRICING/UPGRADES: Hide price, luxury, deluxe */
+        .package-price, .luxury-upgrade { display: none !important; }
         /* Charm Cards Section */
         .charms-section {
             padding: 100px 0;
@@ -446,19 +308,20 @@
             background-size: cover;
             background-attachment: fixed;
         }
-        
-        .charms-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .charms-container { max-width: 1400px; margin: 0 auto; }
+        .charms-section .section-title,
+        .charms-section .philosophy-text {
+            text-align: center; /* 4. Center Sacred Spirit Charms section */
+            width: 100%;
+            margin: 0 auto 25px auto;
+            display: block;
         }
-        
         .charms-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-top: 80px;
         }
-        
         .charm-card {
             background: rgba(26, 13, 46, 0.8);
             border: 1px solid rgba(212, 175, 55, 0.3);
@@ -468,37 +331,23 @@
             position: relative;
             overflow: hidden;
         }
-        
         .charm-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
+            top: 0; left: 0; width: 100%; height: 5px;
             background: var(--gold);
             transform: translateY(-100%);
             transition: transform 0.4s;
         }
-        
-        .charm-card:hover::before {
-            transform: translateY(0);
-        }
-        
+        .charm-card:hover::before { transform: translateY(0); }
         .charm-card:hover {
             transform: translateY(-10px);
             border-color: rgba(212, 175, 55, 0.7);
         }
-        
         .charm-number {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: rgba(212, 175, 55, 0.3);
-            font-weight: 700;
+            position: absolute; top: 20px; right: 20px;
+            font-size: 24px; color: rgba(212, 175, 55, 0.3); font-weight: 700;
         }
-        
         .charm-title {
             font-size: 28px;
             margin-bottom: 20px;
@@ -506,7 +355,6 @@
             position: relative;
             padding-bottom: 15px;
         }
-        
         .charm-title::after {
             content: '';
             position: absolute;
@@ -516,27 +364,13 @@
             bottom: 0;
             left: 0;
         }
-        
-        .charm-materials {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        
-        .charm-materials h4 {
+        .charm-materials { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(212, 175, 55, 0.2);}
+        .charm-materials h4, .charm-effect h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--gold-light);
         }
-        
-        .charm-effect h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--gold-light);
-        }
-        
         .charm-description {
             background: rgba(12, 12, 22, 0.5);
             border-left: 3px solid var(--gold);
@@ -544,7 +378,6 @@
             margin: 20px 0;
             font-style: italic;
         }
-        
         .charm-warning {
             color: rgba(212, 175, 55, 0.9);
             font-style: italic;
@@ -553,35 +386,21 @@
             align-items: flex-start;
             gap: 10px;
         }
-        
         /* Bracelet System */
         .bracelet-section {
-            padding: 150px 0;
+            padding: 80px 0 40px 0; /* 6. Reduce padding above and below */
             background: var(--obsidian);
             text-align: center;
         }
-        
-        .bracelet-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
+        .bracelet-container { max-width: 800px; margin: 0 auto;}
         .bracelet-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             margin-top: 80px;
         }
-        
-        .bracelet-card {
-            padding: 30px;
-            transition: all 0.4s;
-        }
-        
-        .bracelet-card:hover {
-            transform: translateY(-10px);
-        }
-        
+        .bracelet-card { padding: 30px; transition: all 0.4s; }
+        .bracelet-card:hover { transform: translateY(-10px);}
         .bracelet-color {
             width: 100px;
             height: 100px;
@@ -593,38 +412,12 @@
             font-size: 40px;
             color: var(--charcoal);
         }
-        
-        .red-bracelet {
-            background: #c53030;
-            box-shadow: 0 0 20px rgba(197, 48, 48, 0.5);
-        }
-        
-        .blue-bracelet {
-            background: #2b6cb0;
-            box-shadow: 0 0 20px rgba(43, 108, 176, 0.5);
-        }
-        
-        .black-bracelet {
-            background: #1a202c;
-            box-shadow: 0 0 20px rgba(26, 32, 44, 0.5);
-        }
-        
-        .gold-bracelet {
-            background: var(--gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-        
-        .bracelet-name {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--gold);
-        }
-        
-        .bracelet-description {
-            font-style: italic;
-            opacity: 0.9;
-        }
-        
+        .red-bracelet { background: #c53030; box-shadow: 0 0 20px rgba(197, 48, 48, 0.5);}
+        .blue-bracelet { background: #2b6cb0; box-shadow: 0 0 20px rgba(43, 108, 176, 0.5);}
+        .black-bracelet { background: #1a202c; box-shadow: 0 0 20px rgba(26, 32, 44, 0.5);}
+        .gold-bracelet { background: var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);}
+        .bracelet-name { font-size: 20px; margin-bottom: 10px; color: var(--gold);}
+        .bracelet-description { font-style: italic; opacity: 0.9;}
         .bracelet-legend {
             max-width: 600px;
             margin: 50px auto 0;
@@ -633,33 +426,17 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
             font-style: italic;
         }
-        
         /* CTA Section */
         .cta-section {
-            padding: 150px 0;
+            padding: 80px 0 150px 0; /* 6. Reduce top padding above cta, keep bottom large */
             text-align: center;
             background: linear-gradient(rgba(12, 12, 22, 0.9), rgba(12, 12, 22, 0.9)), url('https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-attachment: fixed;
         }
-        
-        .cta-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-title {
-            font-size: 52px;
-            margin-bottom: 30px;
-        }
-        
-        .cta-text {
-            font-size: 24px;
-            margin-bottom: 50px;
-            opacity: 0.9;
-            font-style: italic;
-        }
-        
+        .cta-container { max-width: 800px; margin: 0 auto;}
+        .cta-title {font-size: 52px; margin-bottom: 30px;}
+        .cta-text {font-size: 24px; margin-bottom: 50px; opacity: 0.9; font-style: italic;}
         /* Footer */
         .footer {
             background: var(--obsidian);
@@ -668,19 +445,13 @@
             position: relative;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
-        
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 60px;
             margin-bottom: 60px;
         }
-        
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-        }
-        
+        .footer-brand { display: flex; flex-direction: column;}
         .footer-logo {
             font-family: 'Playfair Display', serif;
             font-size: 32px;
@@ -689,7 +460,6 @@
             margin-bottom: 25px;
             display: inline-block;
         }
-        
         .footer-about {
             font-size: 16px;
             line-height: 1.8;
@@ -697,12 +467,7 @@
             margin-bottom: 30px;
             max-width: 400px;
         }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-        
+        .social-links { display: flex; gap: 20px;}
         .social-links a {
             width: 45px;
             height: 45px;
@@ -715,13 +480,11 @@
             font-size: 18px;
             transition: all 0.3s;
         }
-        
         .social-links a:hover {
             background: var(--gold);
             color: var(--charcoal);
             transform: translateY(-5px);
         }
-        
         .footer-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -732,7 +495,6 @@
             position: relative;
             padding-bottom: 10px;
         }
-        
         .footer-title::after {
             content: '';
             position: absolute;
@@ -742,16 +504,8 @@
             bottom: 0;
             left: 0;
         }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-        
+        .footer-links { list-style: none; padding: 0;}
+        .footer-links li { margin-bottom: 15px;}
         .footer-links a {
             color: var(--ivory);
             text-decoration: none;
@@ -760,13 +514,11 @@
             font-size: 17px;
             display: inline-block;
         }
-        
         .footer-links a:hover {
             opacity: 1;
             color: var(--gold);
             transform: translateX(5px);
         }
-        
         .footer-bottom {
             text-align: center;
             padding-top: 50px;
@@ -775,7 +527,6 @@
             font-size: 15px;
             opacity: 0.6;
         }
-        
         /* Floating Curator Button */
         .floating-curator {
             position: fixed;
@@ -796,69 +547,29 @@
             transition: all 0.3s;
             animation: pulse 2s infinite;
         }
-        
         .floating-curator:hover {
             transform: scale(1.1) translateY(-5px);
             box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5);
         }
-        
-        /* Animations */
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
             70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
-        
-        /* Mobile Responsiveness */
         @media (max-width: 992px) {
-            .hero-title {
-                font-size: 62px;
-            }
-            
-            .section-title {
-                font-size: 42px;
-            }
-            
-            .nav-menu li {
-                margin-left: 25px;
-            }
-            
-            .package-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-title { font-size: 62px;}
+            .section-title { font-size: 42px;}
+            .nav-menu li { margin-left: 25px;}
+            .package-grid { grid-template-columns: 1fr;}
         }
-        
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-            
-            .nav-menu {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-menu li {
-                margin: 0 10px 10px;
-            }
-            
-            .hero-title {
-                font-size: 42px;
-            }
-            
-            .hero-subtitle {
-                font-size: 18px;
-            }
-            
-            .section-title {
-                font-size: 36px;
-            }
-            
-            .bracelet-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav-container { flex-direction: column; padding: 15px 0;}
+            .nav-menu { margin-top: 20px; flex-wrap: wrap; justify-content: center;}
+            .nav-menu li { margin: 0 10px 10px;}
+            .hero-title { font-size: 42px;}
+            .hero-subtitle { font-size: 18px;}
+            .section-title { font-size: 36px;}
+            .bracelet-grid { grid-template-columns: 1fr;}
         }
     </style>
 </head>
@@ -867,15 +578,14 @@
     <a href="contact.html" class="floating-curator">
         <i class="fas fa-compass"></i>
     </a>
-
     <!-- Header & Navigation -->
-      <header class='header' id='header'>
+    <header class='header' id='header'>
         <div class='nav-container'>
             <a href='/' class='logo'>ONAYI</a>
             <ul class='nav-menu'>
                 <li><a href='experiences.html'>Experiences</a></li>
                 <li><a href='paranormal.html'>Paranormal</a></li>
-                <li><a href='spiritual.html'>Mind-Body Escapes</a></li>
+                <li><a href='gallery.html'>Gallery</a></li>
                 <li><a href='about.html'>About You</a></li>
                 <li><a href='shop.html'>Curio Shop</a></li>
                 <li><a href='blog.html'>Blog</a></li>
@@ -883,7 +593,6 @@
             </ul>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class='paranormal-hero'>
         <div class="container">
@@ -898,13 +607,11 @@
             </div>
         </div>
     </section>
-
     <!-- Philosophy Section -->
     <section class="philosophy-section">
         <div class="philosophy-container">
             <h2 class="section-title">Sacred Encounters</h2>
             <p class="philosophy-text">At Onayi Africa, we don't just offer paranormal tours—we facilitate sacred encounters with Africa's spiritual heritage. Our journeys honor centuries of tradition while creating space for personal transformation.</p>
-            
             <div class="principle-card">
                 <div class="principle-icon">
                     <i class="fas fa-hands"></i>
@@ -912,7 +619,6 @@
                 <h3 class="principle-title">Cultural Reverence</h3>
                 <p>We follow the guidance of local elders and spiritual leaders. Villages control the narrative, sharing only what they choose to reveal. Every journey begins and ends with respect.</p>
             </div>
-            
             <div class="principle-card">
                 <div class="principle-icon">
                     <i class="fas fa-theater-masks"></i>
@@ -920,7 +626,6 @@
                 <h3 class="principle-title">Authentic Theater</h3>
                 <p>We blend genuine belief with masterful storytelling. Villagers aren't performers—they're custodians of traditions that blur the line between ritual and reality.</p>
             </div>
-            
             <div class="principle-card">
                 <div class="principle-icon">
                     <i class="fas fa-memory"></i>
@@ -930,13 +635,11 @@
             </div>
         </div>
     </section>
-
     <!-- Experience Packages -->
     <section class="packages-section" id="packages">
         <div class="packages-container">
             <h2 class="section-title">Signature Paranormal Journeys</h2>
             <p class="philosophy-text">Carefully crafted experiences that honor tradition while offering unparalleled access to Africa's spiritual dimensions</p>
-            
             <div class="package-grid">
                 <!-- Package 1 -->
                 <div class="package-card">
@@ -951,42 +654,21 @@
                         <div class="package-features">
                             <h4>Experience Includes:</h4>
                             <ul class="feature-list">
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-moon"></i></span>
-                                    <span>Night walk with Nyau elder (no photos allowed)</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>Receive "Eyes of the Ancestors" charm from village healer</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-bed"></i></span>
-                                    <span>Sleep near known spirit-grave site (beds lifted on bricks)</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-fire"></i></span>
-                                    <span>Authentic storytelling session of village sightings</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-cloud-moon"></i></span>
-                                    <span>Optional dream interpretation at sunrise</span>
-                                </li>
+                                <li><span class="feature-icon"><i class="fas fa-moon"></i></span>
+                                    <span>Night walk with Nyau elder (no photos allowed)</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
+                                    <span>Receive "Eyes of the Ancestors" charm from village healer</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-bed"></i></span>
+                                    <span>Sleep near known spirit-grave site (beds lifted on bricks)</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-fire"></i></span>
+                                    <span>Authentic storytelling session of village sightings</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-cloud-moon"></i></span>
+                                    <span>Optional dream interpretation at sunrise</span></li>
                             </ul>
                         </div>
-                        <div class="package-price">From $320 per person</div>
-                        
-                        <div class="luxury-upgrade">
-                            <div class="upgrade-title">
-                                <i class="fas fa-crown"></i>
-                                <span>Luxury Private Experience</span>
-                            </div>
-                            <p>Upgrade to include private healer consultation, gourmet ancestral meal, and professional documentation of your experience. From $1,200 per person.</p>
-                        </div>
-                        
                         <a href="contact.html" class="btn">Request Journey</a>
                     </div>
                 </div>
-                
                 <!-- Package 2 -->
                 <div class="package-card">
                     <div class="package-header">
@@ -1000,33 +682,21 @@
                         <div class="package-features">
                             <h4>Experience Includes:</h4>
                             <ul class="feature-list">
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-tree"></i></span>
-                                    <span>Forest walk with storyteller who claims to have "vanished"</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>"Ashes of Vanishing" charm before entering the forest</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-shield-alt"></i></span>
-                                    <span>Spirit protection blessing by Nyau apprentice</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-masks-theater"></i></span>
-                                    <span>Sunset ritual performance by dancers (where permitted)</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-utensils"></i></span>
-                                    <span>Traditional meal with local beer around sacred fire</span>
-                                </li>
+                                <li><span class="feature-icon"><i class="fas fa-tree"></i></span>
+                                    <span>Forest walk with storyteller who claims to have "vanished"</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
+                                    <span>"Ashes of Vanishing" charm before entering the forest</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-shield-alt"></i></span>
+                                    <span>Spirit protection blessing by Nyau apprentice</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-masks-theater"></i></span>
+                                    <span>Sunset ritual performance by dancers (where permitted)</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-utensils"></i></span>
+                                    <span>Traditional meal with local beer around sacred fire</span></li>
                             </ul>
                         </div>
-                        <div class="package-price">From $250 per person</div>
                         <a href="contact.html" class="btn">Request Journey</a>
                     </div>
                 </div>
-                
                 <!-- Package 3 -->
                 <div class="package-card">
                     <div class="package-header">
@@ -1040,33 +710,21 @@
                         <div class="package-features">
                             <h4>Experience Includes:</h4>
                             <ul class="feature-list">
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-money-bill-wave"></i></span>
-                                    <span>Visit to sites where "snake money" was discovered</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>"The Silent Snake" protection charm</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-user"></i></span>
-                                    <span>Conversation with locals who fled wealth curses</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-store"></i></span>
-                                    <span>Guided visit to charm marketplace with healer</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-water"></i></span>
-                                    <span>Optional river ceremony to "decline" spirit wealth</span>
-                                </li>
+                                <li><span class="feature-icon"><i class="fas fa-money-bill-wave"></i></span>
+                                    <span>Visit to sites where "snake money" was discovered</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
+                                    <span>"The Silent Snake" protection charm</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-user"></i></span>
+                                    <span>Conversation with locals who fled wealth curses</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-store"></i></span>
+                                    <span>Guided visit to charm marketplace with healer</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-water"></i></span>
+                                    <span>Optional river ceremony to "decline" spirit wealth</span></li>
                             </ul>
                         </div>
-                        <div class="package-price">From $480 per person</div>
                         <a href="contact.html" class="btn">Request Journey</a>
                     </div>
                 </div>
-                
                 <!-- Package 4 -->
                 <div class="package-card">
                     <div class="package-header">
@@ -1080,146 +738,106 @@
                         <div class="package-features">
                             <h4>Experience Includes:</h4>
                             <ul class="feature-list">
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>"Dream Caller" charm with guided ritual</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-fire"></i></span>
-                                    <span>Storytelling session with healer about spirit dreamers</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-book"></i></span>
-                                    <span>Personalized dream journal for guests</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-brain"></i></span>
-                                    <span>Morning spiritual analysis of dreams</span>
-                                </li>
-                                <li>
-                                    <span class="feature-icon"><i class="fas fa-door-closed"></i></span>
-                                    <span>Closing ceremony to "shut the dream gate"</span>
-                                </li>
+                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
+                                    <span>"Dream Caller" charm with guided ritual</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-fire"></i></span>
+                                    <span>Storytelling session with healer about spirit dreamers</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-book"></i></span>
+                                    <span>Personalized dream journal for guests</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-brain"></i></span>
+                                    <span>Morning spiritual analysis of dreams</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-door-closed"></i></span>
+                                    <span>Closing ceremony to "shut the dream gate"</span></li>
                             </ul>
                         </div>
-                        <div class="package-price">From $250 per person</div>
-                        
-                        <div class="luxury-upgrade">
-                            <div class="upgrade-title">
-                                <i class="fas fa-spa"></i>
-                                <span>Deluxe Upgrade</span>
-                            </div>
-                            <p>Add forest bathing experience and river blessing ceremony. Additional $150 per person.</p>
-                        </div>
-                        
                         <a href="contact.html" class="btn">Request Journey</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Charm Cards Section -->
     <section class="charms-section">
         <div class="charms-container">
             <h2 class="section-title">Sacred Spirit Charms</h2>
             <p class="philosophy-text">Each journey includes an authentic spiritual charm, crafted by village healers and presented in ceremonial leather pouches</p>
-            
             <div class="charms-grid">
+                <!-- Charms as before... -->
                 <!-- Charm 1 -->
                 <div class="charm-card">
                     <div class="charm-number">01</div>
                     <h3 class="charm-title">Eyes of the Ancestors</h3>
-                    
                     <div class="charm-materials">
                         <h4>Sacred Ingredients:</h4>
                         <p>Burnt kola nut ash, baboon root, river dust</p>
                     </div>
-                    
                     <div class="charm-effect">
                         <h4>Spiritual Purpose:</h4>
                         <p>Sharpens "spirit vision" with ancestral permission</p>
                     </div>
-                    
                     <div class="charm-description">
                         "They say this charm opens eyes that were never meant to open. Smear the ash lightly under each eye. If the spirits know your name, they may reveal something in the shadows."
                     </div>
-                    
                     <div class="charm-warning">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>Not everyone is meant to see. Use with respect. The eyes of the ancestors are always watching.</span>
                     </div>
                 </div>
-                
                 <!-- Charm 2 -->
                 <div class="charm-card">
                     <div class="charm-number">02</div>
                     <h3 class="charm-title">The Silent Snake</h3>
-                    
                     <div class="charm-materials">
                         <h4>Sacred Ingredients:</h4>
                         <p>Powdered python scale, copper thread, palm resin</p>
                     </div>
-                    
                     <div class="charm-effect">
                         <h4>Spiritual Purpose:</h4>
                         <p>Protection from snake spirits and wealth curses</p>
                     </div>
-                    
                     <div class="charm-description">
                         "The snake may slither beside you, but it will not bite—if it recognizes this scent. Carry it at night. Especially near rivers or markets where the greedy spirits roam."
                     </div>
-                    
                     <div class="charm-warning">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>Never show this charm to strangers. Its power diminishes with disbelief.</span>
                     </div>
                 </div>
-                
                 <!-- Charm 3 -->
                 <div class="charm-card">
                     <div class="charm-number">03</div>
                     <h3 class="charm-title">Ashes of Vanishing</h3>
-                    
                     <div class="charm-materials">
                         <h4>Sacred Ingredients:</h4>
                         <p>Charcoal from Nyau dancer fires, ghost bean husks</p>
                     </div>
-                    
                     <div class="charm-effect">
                         <h4>Spiritual Purpose:</h4>
                         <p>Hides the wearer from spirit view in sacred places</p>
                     </div>
-                    
                     <div class="charm-description">
                         "Nyau dancers smear this before they vanish into bottles or fire. Rub it on your wrist before crossing sacred places. If a presence passes, it may skip over you."
                     </div>
-                    
                     <div class="charm-warning">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>Do not use near burial sites. The ancestors may consider it disrespectful.</span>
                     </div>
                 </div>
-                
                 <!-- Charm 4 -->
                 <div class="charm-card">
                     <div class="charm-number">04</div>
                     <h3 class="charm-title">Dream Caller</h3>
-                    
                     <div class="charm-materials">
                         <h4>Sacred Ingredients:</h4>
                         <p>Moonflower petals, sleep bark, ancestor's root</p>
                     </div>
-                    
                     <div class="charm-effect">
                         <h4>Spiritual Purpose:</h4>
                         <p>Invites ancestral spirits into dreams for communication</p>
                     </div>
-                    
                     <div class="charm-description">
                         "Boil into tea or place under your pillow. Do not speak before sleeping. If the spirit visits, ask only once: 'What do you want me to know?'"
                     </div>
-                    
                     <div class="charm-warning">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>Never use more than three nights consecutively. The door between worlds must remain balanced.</span>
@@ -1228,13 +846,11 @@
             </div>
         </div>
     </section>
-
     <!-- Bracelet System -->
     <section class="bracelet-section">
         <div class="bracelet-container">
             <h2 class="section-title">The "Chosen" Bracelet</h2>
             <p class="philosophy-text">Each guest receives a handmade bracelet indicating their journey archetype. Locals recognize the colors and meanings.</p>
-            
             <div class="bracelet-grid">
                 <div class="bracelet-card">
                     <div class="bracelet-color red-bracelet">
@@ -1243,7 +859,6 @@
                     <h4 class="bracelet-name">Graveyard Walker</h4>
                     <p class="bracelet-description">For those who seek communion with ancestors</p>
                 </div>
-                
                 <div class="bracelet-card">
                     <div class="bracelet-color blue-bracelet">
                         <i class="fas fa-cloud-moon"></i>
@@ -1251,7 +866,6 @@
                     <h4 class="bracelet-name">Dream Voyager</h4>
                     <p class="bracelet-description">For those who journey through spiritual dreams</p>
                 </div>
-                
                 <div class="bracelet-card">
                     <div class="bracelet-color black-bracelet">
                         <i class="fas fa-eye-slash"></i>
@@ -1259,7 +873,6 @@
                     <h4 class="bracelet-name">Forest Vanisher</h4>
                     <p class="bracelet-description">For those who seek to move unseen by spirits</p>
                 </div>
-                
                 <div class="bracelet-card">
                     <div class="bracelet-color gold-bracelet">
                         <i class="fas fa-snake"></i>
@@ -1268,13 +881,11 @@
                     <p class="bracelet-description">For those navigating spirit wealth and curses</p>
                 </div>
             </div>
-            
             <div class="bracelet-legend">
                 "Some say: If your bracelet burns your wrist, the spirits have chosen you."
             </div>
         </div>
     </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-container">
@@ -1283,9 +894,8 @@
             <a href="contact.html" class="btn btn-primary">Request Your Paranormal Journey</a>
         </div>
     </section>
-
     <!-- Footer -->
-      <footer class='footer'>
+    <footer class='footer'>
         <div class='footer-grid'>
             <div class="footer-brand">
                 <a href='/' class='footer-logo'>ONAYI</a>
@@ -1297,29 +907,25 @@
                     <a href='#'><i class='fab fa-linkedin'></i></a>
                 </div>
             </div>
-            
             <div class='footer-col'>
                 <h3 class='footer-title'>Explore</h3>
                 <ul class='footer-links'>
                     <li><a href='experiences.html'>Signature Experiences</a></li>
                     <li><a href='paranormal.html'>Paranormal Journeys</a></li>
-                    <li><a href='spiritual.html'>Mind-Body Escapes</a></li>
+                    <li><a href='gallery.html'>Gallery</a></li>
                     <li><a href='experiences.html'>Epic Safari</a></li>
-                    <li><a href='#'>Forbidden Africa</a></li>
+                    <li><a href='#'>Insane Locations</a></li> <!-- 7. Change Forbidden Africa to Insane Locations -->
                 </ul>
             </div>
-            
             <div class='footer-col'>
                 <h3 class='footer-title'>Onayi</h3>
                 <ul class='footer-links'>
                     <li><a href='about.html'>About You</a></li>
                     <li><a href='shop.html'>Curio Shop</a></li>
-                    <li><a href='spiritual.html'>Ubuhle Spa</a></li>
-                    <li><a href='#'>Gallery</a></li>
+                    <li><a href='gallery.html'>Gallery</a></li>
                     <li><a href='#'>Privacy Policy</a></li>
                 </ul>
             </div>
-            
             <div class='footer-col'>
                 <h3 class='footer-title'>Contact Us</h3>
                 <ul class='footer-links'>
@@ -1330,33 +936,24 @@
                 </ul>
             </div>
         </div>
-        
         <div class='footer-bottom'>
             <p>&copy; 2025 Onayi Africa. All experiences are subject to availability. We craft journeys your friends can't copy. | Designed for the Unrepeatable Life</p>
         </div>
     </footer>
-
     <script>
         // Sticky Header
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
         });
-        
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
-        
         // Floating button interaction
         const floatingBtn = document.querySelector('.floating-curator');
         floatingBtn.addEventListener('click', function() {
