@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Onayi Africa | Paranormal Journeys</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 1. Gold dot favicon -->
+    <!-- Gold dot favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23D4AF37%22/%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
             --bronze: #CD7F32;
             --velvet: #1a0d2e;
             --mystic: #1c1127;
+            --glass-bg: rgba(20, 18, 27, 0.68);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -42,7 +43,7 @@
             width: 100%;
             height: 100%;
             background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSgyMTIsIDE3NSwgNTUsIDAuMDcpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
-            opacity: 0.2;
+            opacity: 0.18;
             z-index: -1;
             pointer-events: none;
         }
@@ -119,95 +120,118 @@
             transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
         .nav-menu a:hover::after { width: 100%; }
-        /* Hero Section */
+
+        /* Super-Premium Hero Section */
         .paranormal-hero {
-            height: 100vh;
+            min-height: 100vh;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(12, 12, 22, 0.7), rgba(12, 12, 22, 0.7)), url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(15, 11, 28, 0.90), rgba(10, 12, 22, 0.94)), url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Nyau%20dancers.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .hero-content { position: relative; z-index: 1; max-width: 1200px; padding-top: 120px; text-align: center; }
-        .hero-tagline {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 20px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 30px;
-            opacity: 0.8;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 180px 24px 140px 24px;
+            text-align: center;
         }
         .hero-title {
-            font-size: 62px;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            line-height: 1.1;
-            text-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+            color: var(--gold);
+            line-height: 1.13;
+            text-shadow: 0 16px 56px #000a, 0 1px 0 var(--sapphire);
         }
         .hero-subtitle {
-            font-size: 24px;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            font-style: italic;
-            opacity: 0.9;
-            font-weight: 300;
+            font-family: 'Montserrat', serif;
+            font-size: 27px;
+            font-weight: 400;
+            color: var(--ivory);
+            opacity: 0.96;
+            margin-bottom: 36px;
+            line-height: 1.4;
+            letter-spacing: 0.2px;
+            text-shadow: 0 3px 20px #000b;
         }
         .hero-warning {
             display: inline-block;
-            border: 1px solid var(--gold);
-            padding: 20px 40px;
-            margin-top: 30px;
+            background: rgba(20, 18, 27, 0.82);
+            border: 1.5px solid var(--gold);
+            box-shadow: 0 3px 18px 0 rgba(212,175,55,0.09);
+            color: var(--gold-light);
+            border-radius: 13px;
+            font-size: 18px;
+            font-family: 'Montserrat', serif;
+            padding: 18px 36px;
+            margin-top: 20px;
+            margin-bottom: 44px;
             font-style: italic;
             position: relative;
+            backdrop-filter: blur(3px);
+            letter-spacing: 0.4px;
+            animation: fadeIn 2.2s cubic-bezier(.56,.14,.38,.87);
         }
-        .hero-warning::before {
-            content: '⚠️';
-            position: absolute;
-            left: 15px;
-            top: -15px;
-            font-size: 24px;
-            background: var(--obsidian);
-            padding: 0 10px;
+        .hero-warning i {
+            color: var(--gold-light);
+            margin-right: 10px;
+            font-size: 21px;
         }
-        .btn {
-            background: transparent;
-            color: var(--ivory);
-            border: 1px solid var(--gold);
-            padding: 18px 45px;
+        .btn.btn-primary {
+            background: linear-gradient(90deg, var(--gold) 67%, var(--gold-light) 100%);
+            color: var(--charcoal);
+            border: none;
+            border-radius: 22px;
+            padding: 22px 58px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 18px;
             letter-spacing: 2px;
             cursor: pointer;
-            transition: all 0.4s;
             text-transform: uppercase;
-            font-size: 14px;
+            box-shadow: 0 7px 26px rgba(212, 175, 55, 0.19);
             position: relative;
-            overflow: hidden;
-            z-index: 1;
-            text-decoration: none;
-            display: inline-block;
+            transition: box-shadow 0.36s, transform 0.27s;
         }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 0; height: 100%;
-            background: var(--gold); z-index: -1;
-            transition: width 0.5s ease;
+        .btn.btn-primary:hover {
+            box-shadow: 0 16px 56px rgba(212, 175, 55, 0.24);
+            transform: translateY(-4px) scale(1.03);
         }
-        .btn:hover::before { width: 100%; }
-        .btn:hover { color: var(--charcoal); }
-        .btn-primary { background: var(--gold); color: var(--charcoal);}
-        .btn-primary:hover { background: var(--gold-light);}
-        /* Philosophy Section (Sacred Encounters) */
+        @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+        /* Optional Welcome Section */
+        .welcome-section {
+            padding: 70px 0 20px 0;
+            background: transparent;
+            text-align: center;
+        }
+        .welcome-title {
+            font-size: 36px;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 12px;
+            letter-spacing: 0.7px;
+        }
+        .welcome-text {
+            font-size: 22px;
+            max-width: 600px;
+            margin: 0 auto 0 auto;
+            color: var(--ivory);
+            opacity: 0.90;
+            font-family: 'Montserrat', serif;
+        }
+
+        /* Sacred Encounters - Super Premium Cards */
         .philosophy-section {
-            padding: 100px 0;
-            /* 1. Change background image here */
+            padding: 100px 0 80px 0;
             background: linear-gradient(rgba(28, 17, 39, 0.93), rgba(20, 12, 30, 0.96)), url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Nyau%20dancers.png');
             background-size: cover;
             background-position: center;
@@ -219,12 +243,15 @@
             margin: 0 auto;
         }
         .section-title {
-            font-size: 52px;
-            margin-bottom: 40px;
+            font-size: 48px;
+            margin-bottom: 38px;
             position: relative;
             display: inline-block;
             width: 100%;
             text-align: center;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
         }
         .section-title::after {
             content: '';
@@ -239,25 +266,24 @@
         .philosophy-text {
             font-size: 20px;
             margin-bottom: 60px;
-            opacity: 0.9;
+            opacity: 0.93;
+            font-family: 'Montserrat', serif;
             text-align: center;
         }
-
-        /* NEW: Sacred Encounters Cards Premium Style */
         .sacred-cards {
             display: flex;
             justify-content: center;
             gap: 40px;
-            margin-top: 40px;
+            margin-top: 24px;
             flex-wrap: wrap;
         }
         .sacred-card {
-            background: rgba(26, 13, 46, 0.85);
-            border: 1.5px solid rgba(212, 175, 55, 0.6);
-            box-shadow: 0 8px 40px 0 rgba(10,36,99,0.25), 0 2px 16px rgba(212,175,55,0.10);
-            border-radius: 18px;
-            padding: 44px 36px 36px 36px;
-            max-width: 330px;
+            background: rgba(26, 13, 46, 0.89);
+            border: 1.7px solid rgba(212, 175, 55, 0.85);
+            box-shadow: 0 8px 40px 0 rgba(10,36,99,0.18), 0 2px 16px rgba(212,175,55,0.13);
+            border-radius: 19px;
+            padding: 50px 36px 34px 36px;
+            max-width: 335px;
             min-width: 260px;
             flex: 1 1 280px;
             text-align: left;
@@ -266,51 +292,35 @@
             overflow: hidden;
         }
         .sacred-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 18px 55px 0 rgba(212,175,55,0.15), 0 8px 22px rgba(212,175,55,0.17);
+            transform: translateY(-14px) scale(1.03);
+            box-shadow: 0 18px 55px 0 rgba(212,175,55,0.19), 0 8px 22px rgba(212,175,55,0.22);
             border-color: var(--gold);
         }
         .sacred-icon {
-            font-size: 44px;
+            font-size: 46px;
             color: var(--gold);
             margin-bottom: 18px;
             display: block;
+            filter: drop-shadow(0 3px 8px rgba(212,175,55,0.16));
         }
         .sacred-title {
             font-family: 'Playfair Display', serif;
-            font-size: 26px;
+            font-size: 27px;
             color: var(--gold-light);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: block;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
         }
         .sacred-desc {
-            font-size: 17px;
+            font-size: 17.5px;
             color: var(--ivory);
-            opacity: 0.92;
+            opacity: 0.95;
+            font-family: 'Montserrat', serif;
         }
-        /* Responsive for Sacred Cards */
-        @media (max-width: 992px) {
-            .hero-title { font-size: 62px;}
-            .section-title { font-size: 42px;}
-            .nav-menu li { margin-left: 25px;}
-            .package-grid { grid-template-columns: 1fr;}
-            .sacred-cards { flex-direction: column; gap: 30px; align-items: center;}
-        }
-        @media (max-width: 768px) {
-            .nav-container { flex-direction: column; padding: 15px 0;}
-            .nav-menu { margin-top: 20px; flex-wrap: wrap; justify-content: center;}
-            .nav-menu li { margin: 0 10px 10px;}
-            .hero-title { font-size: 42px;}
-            .hero-subtitle { font-size: 18px;}
-            .section-title { font-size: 36px;}
-            .bracelet-grid { grid-template-columns: 1fr;}
-            .sacred-card { max-width: 95vw; min-width: 0; padding: 34px 18px;}
-        }
-        /* ... rest unchanged ... */
-        /* Experience Packages */
+
+        /* Premium Experience Card Styles */
         .packages-section {
-            padding: 100px 0;
+            padding: 100px 0 60px 0;
             background: var(--velvet);
         }
         .packages-container {
@@ -326,54 +336,83 @@
         }
         .package-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 50px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+            gap: 54px;
+            margin-top: 44px;
         }
         .package-card {
-            background: rgba(26, 13, 46, 0.5);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 4px;
+            background: rgba(26, 13, 46, 0.79);
+            border: 2px solid rgba(212, 175, 55, 0.33);
+            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s;
+            transition: all 0.4s cubic-bezier(.32,2,.55,.27);
             position: relative;
+            box-shadow: 0 6px 30px rgba(212, 175, 55, 0.07);
+            backdrop-filter: blur(2.5px);
+            min-height: 470px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .package-card:hover {
-            transform: translateY(-15px);
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px) scale(1.03);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.16), 0 14px 28px rgba(212,175,55,0.11);
         }
         .package-header {
-            padding: 30px;
-            background: rgba(12, 12, 22, 0.7);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 30px 30px 22px 30px;
+            background: linear-gradient(95deg, rgba(12, 12, 22, 0.92) 75%, rgba(212, 175, 55, 0.13) 100%);
+            border-bottom: 1.5px solid rgba(212, 175, 55, 0.13);
         }
         .package-title {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 30px;
+            margin-bottom: 8px;
             color: var(--gold);
+            font-family: 'Playfair Display', serif;
         }
         .package-location {
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             letter-spacing: 1px;
-            opacity: 0.8;
+            opacity: 0.83;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .package-content { padding: 30px; }
+        .package-content { padding: 28px 30px 34px 30px; }
         .package-features { margin-bottom: 30px; }
         .feature-list { list-style: none; padding: 0; }
         .feature-list li {
             display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start;
+            font-size: 17px;
+            font-family: 'Montserrat', serif;
         }
         .feature-icon { color: var(--gold); min-width: 24px; padding-top: 5px;}
         .package-price, .luxury-upgrade { display: none !important; }
-        /* Charm Cards Section */
+        .btn {
+            background: transparent;
+            color: var(--ivory);
+            border: 1.5px solid var(--gold);
+            padding: 14px 43px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.4s;
+            text-transform: uppercase;
+            font-size: 15px;
+            border-radius: 19px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { background: var(--gold); color: var(--charcoal); border-color: var(--gold);}
+        /* Charms Section - Premium Style */
         .charms-section {
-            padding: 100px 0;
-            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1543857778-c4a1a569e7bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            padding: 100px 0 80px 0;
+            background: linear-gradient(rgba(10, 36, 99, 0.93), rgba(10, 36, 99, 0.98)), url('https://images.unsplash.com/photo-1543857778-c4a1a569e7bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-attachment: fixed;
         }
@@ -387,16 +426,17 @@
         }
         .charms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 42px;
             margin-top: 80px;
         }
         .charm-card {
-            background: rgba(26, 13, 46, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 40px 30px;
+            background: rgba(32, 17, 54, 0.84);
+            border: 1.8px solid rgba(212, 175, 55, 0.38);
+            padding: 46px 30px 36px 30px;
+            border-radius: 17px;
             backdrop-filter: blur(5px);
-            transition: all 0.4s;
+            transition: all 0.37s cubic-bezier(.32,2,.55,.27);
             position: relative;
             overflow: hidden;
         }
@@ -406,34 +446,35 @@
             top: 0; left: 0; width: 100%; height: 5px;
             background: var(--gold);
             transform: translateY(-100%);
-            transition: transform 0.4s;
+            transition: transform 0.37s cubic-bezier(.32,2,.55,.27);
         }
         .charm-card:hover::before { transform: translateY(0); }
         .charm-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.7);
+            transform: translateY(-13px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.6);
         }
         .charm-number {
-            position: absolute; top: 20px; right: 20px;
-            font-size: 24px; color: rgba(212, 175, 55, 0.3); font-weight: 700;
+            position: absolute; top: 18px; right: 18px;
+            font-size: 23px; color: rgba(212, 175, 55, 0.22); font-weight: 700;
         }
         .charm-title {
-            font-size: 28px;
+            font-size: 25px;
             margin-bottom: 20px;
             color: var(--gold);
+            font-family: 'Playfair Display', serif;
             position: relative;
             padding-bottom: 15px;
         }
         .charm-title::after {
             content: '';
             position: absolute;
-            width: 50px;
+            width: 45px;
             height: 2px;
             background: var(--gold);
             bottom: 0;
             left: 0;
         }
-        .charm-materials { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(212, 175, 55, 0.2);}
+        .charm-materials { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(212, 175, 55, 0.16);}
         .charm-materials h4, .charm-effect h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -441,32 +482,32 @@
             color: var(--gold-light);
         }
         .charm-description {
-            background: rgba(12, 12, 22, 0.5);
+            background: rgba(12, 12, 22, 0.55);
             border-left: 3px solid var(--gold);
-            padding: 20px;
-            margin: 20px 0;
+            padding: 17px;
+            margin: 18px 0;
             font-style: italic;
         }
         .charm-warning {
-            color: rgba(212, 175, 55, 0.9);
+            color: rgba(212, 175, 55, 0.8);
             font-style: italic;
-            margin-top: 20px;
+            margin-top: 17px;
             display: flex;
             align-items: flex-start;
             gap: 10px;
         }
-        /* Bracelet System */
+        /* Bracelet Section - Premium */
         .bracelet-section {
             padding: 80px 0 40px 0;
             background: var(--obsidian);
             text-align: center;
         }
-        .bracelet-container { max-width: 800px; margin: 0 auto;}
+        .bracelet-container { max-width: 850px; margin: 0 auto;}
         .bracelet-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
+            gap: 44px;
+            margin-top: 70px;
         }
         .bracelet-card { padding: 30px; transition: all 0.4s; }
         .bracelet-card:hover { transform: translateY(-10px);}
@@ -499,13 +540,123 @@
         .cta-section {
             padding: 80px 0 150px 0;
             text-align: center;
-            background: linear-gradient(rgba(12, 12, 22, 0.9), rgba(12, 12, 22, 0.9)), url('https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(12, 12, 22, 0.94), rgba(12, 12, 22, 0.98)), url('https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-attachment: fixed;
         }
         .cta-container { max-width: 800px; margin: 0 auto;}
         .cta-title {font-size: 52px; margin-bottom: 30px;}
-        .cta-text {font-size: 24px; margin-bottom: 50px; opacity: 0.9; font-style: italic;}
+        .cta-text {font-size: 24px; margin-bottom: 50px; opacity: 0.93; font-style: italic;}
+        /* Gallery Section */
+        .immersive-gallery-section {
+            background: var(--mystic);
+            padding: 90px 0;
+        }
+        .immersive-gallery-section .section-title {
+            color: var(--gold);
+            margin-bottom: 56px;
+        }
+        .gallery-masonry {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        .gallery-card {
+            background: rgba(26, 13, 46, 0.76);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 32px rgba(10,36,99,0.11);
+            transition: transform 0.33s cubic-bezier(.32,2,.55,.27), box-shadow 0.33s;
+            position: relative;
+            min-height: 310px;
+        }
+        .gallery-card img {
+            width: 100%;
+            min-height: 210px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s cubic-bezier(.32,2,.55,.27);
+        }
+        .gallery-card:hover img {
+            transform: scale(1.045) rotate(-0.6deg);
+        }
+        .gallery-caption {
+            padding: 22px 24px;
+            font-size: 18px;
+            color: var(--gold-light);
+            background: rgba(12, 12, 22, 0.79);
+            font-family: 'Montserrat', serif;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            opacity: 0.93;
+            letter-spacing: 0.2px;
+        }
+        /* FAQ Section */
+        .faq-section {
+            background: var(--obsidian);
+            padding: 90px 0;
+        }
+        .faq-section .section-title {
+            color: var(--gold);
+            margin-bottom: 39px;
+        }
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-accordion {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 22px rgba(212,175,55,0.08);
+        }
+        .faq-item {
+            background: rgba(26, 13, 46, 0.88);
+            border-bottom: 1px solid rgba(212,175,55,0.10);
+            padding: 0;
+        }
+        .faq-question {
+            cursor: pointer;
+            font-size: 21px;
+            font-family: 'Montserrat', serif;
+            color: var(--gold-light);
+            padding: 29px 36px;
+            position: relative;
+            transition: background 0.21s;
+        }
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 36px;
+            top: 29px;
+            font-size: 23px;
+            color: var(--gold-light);
+            transition: transform 0.24s;
+        }
+        .faq-item.active .faq-question {
+            background: rgba(212,175,55,0.14);
+        }
+        .faq-item.active .faq-question::after {
+            content: '–';
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            font-size: 17px;
+            color: var(--ivory);
+            font-family: 'Montserrat', serif;
+            padding: 0 36px 23px 36px;
+            display: none;
+            opacity: 0.93;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
         /* Footer */
         .footer {
             background: var(--obsidian);
@@ -625,6 +776,25 @@
             70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
+        @media (max-width: 992px) {
+            .hero-title { font-size: 42px;}
+            .section-title { font-size: 36px;}
+            .nav-menu li { margin-left: 25px;}
+            .package-grid { grid-template-columns: 1fr;}
+            .sacred-cards { flex-direction: column; gap: 30px; align-items: center;}
+        }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; padding: 15px 0;}
+            .nav-menu { margin-top: 20px; flex-wrap: wrap; justify-content: center;}
+            .nav-menu li { margin: 0 10px 10px;}
+            .hero-title { font-size: 32px;}
+            .hero-subtitle { font-size: 15px;}
+            .section-title { font-size: 25px;}
+            .bracelet-grid { grid-template-columns: 1fr;}
+            .sacred-card { max-width: 95vw; min-width: 0; padding: 34px 18px;}
+            .package-header, .package-content { padding: 20px 11px;}
+            .charm-card { padding: 22px 8px;}
+        }
     </style>
 </head>
 <body>
@@ -649,24 +819,30 @@
     </header>
     <!-- Hero Section -->
     <section class='paranormal-hero'>
-        <div class="container">
-            <div class='hero-content'>
-                <div class="hero-tagline">WHERE THE VEIL GROWS THIN</div>
-                <h1 class='hero-title'>Journeys Beyond the Seen</h1>
-                <p class='hero-subtitle'>Step into Africa's mystical dimensions, where ancestral spirits whisper and ancient magic breathes</p>
-                <a href="#packages" class="btn btn-primary">Explore Paranormal Journeys</a>
-                <div class="hero-warning">
-                    "Phones may stop working. Spirits may visit you in dreams. You've been warned."
-                </div>
+        <div class='hero-content'>
+            <h1 class="hero-title">Do you believe in ghosts? In Africa, it doesn’t matter. The spirits believe in you.</h1>
+            <p class="hero-subtitle">
+                Step into a world where legends still breathe, rituals are alive, and every forbidden story is yours to witness—if you dare.
+            </p>
+            <div class="hero-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                Phones may stop working. Spirits may visit you in dreams. You’ve been warned.
             </div>
+            <a href="#sacred-encounters" class="btn btn-primary btn-lg">Begin Your Journey</a>
         </div>
     </section>
-    <!-- Philosophy Section -->
-    <section class="philosophy-section">
+    <!-- Optional Welcome Section -->
+    <section class="welcome-section">
+        <h2 class="welcome-title">Not All Who Wander Are Lost—Some Are Called.</h2>
+        <p class="welcome-text">
+            What brings you here? Curiosity? Restlessness? A longing for something the world can’t explain? Good. You’re exactly who we’re looking for.
+        </p>
+    </section>
+    <!-- Sacred Encounters Section -->
+    <section class="philosophy-section" id="sacred-encounters">
         <div class="philosophy-container">
             <h2 class="section-title">Sacred Encounters</h2>
             <p class="philosophy-text">At Onayi Africa, we don't just offer paranormal tours—we facilitate sacred encounters with Africa's spiritual heritage. Our journeys honor centuries of tradition while creating space for personal transformation.</p>
-            <!-- Premium Sacred Encounter Cards -->
             <div class="sacred-cards">
                 <div class="sacred-card">
                     <span class="sacred-icon"><i class="fas fa-hands"></i></span>
@@ -692,121 +868,175 @@
             </div>
         </div>
     </section>
-    <!-- Experience Packages ... unchanged ... -->
-    <!-- (rest of your HTML continues as before) -->
-    <!-- Experience Packages -->
+    <!-- Signature Paranormal Journeys (Experience Packages) -->
     <section class="packages-section" id="packages">
         <div class="packages-container">
             <h2 class="section-title">Signature Paranormal Journeys</h2>
-            <p class="philosophy-text">Carefully crafted experiences that honor tradition while offering unparalleled access to Africa's spiritual dimensions</p>
+            <p class="philosophy-text">Carefully crafted experiences that honor tradition while offering unparalleled access to Africa's spiritual dimensions.</p>
             <div class="package-grid">
-                <!-- Package 1 -->
+                <!-- Example: Tokoloshe Trail -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3 class="package-title">The Graveyard That Watches Back</h3>
+                        <h3 class="package-title">The Tokoloshe Trail: Midnight Mysteries</h3>
                         <div class="package-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Rural Malawi or Eastern Zimbabwe</span>
+                            <span>Zimbabwe</span>
                         </div>
                     </div>
                     <div class="package-content">
                         <div class="package-features">
                             <h4>Experience Includes:</h4>
                             <ul class="feature-list">
-                                <li><span class="feature-icon"><i class="fas fa-moon"></i></span>
-                                    <span>Night walk with Nyau elder (no photos allowed)</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>Receive "Eyes of the Ancestors" charm from village healer</span></li>
                                 <li><span class="feature-icon"><i class="fas fa-bed"></i></span>
-                                    <span>Sleep near known spirit-grave site (beds lifted on bricks)</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-fire"></i></span>
-                                    <span>Authentic storytelling session of village sightings</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-cloud-moon"></i></span>
-                                    <span>Optional dream interpretation at sunrise</span></li>
-                            </ul>
-                        </div>
-                        <a href="contact.html" class="btn">Request Journey</a>
-                    </div>
-                </div>
-                <!-- Package 2 -->
-                <div class="package-card">
-                    <div class="package-header">
-                        <h3 class="package-title">The Vanishing Forest</h3>
-                        <div class="package-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Zambia-Malawi Border Region</span>
-                        </div>
-                    </div>
-                    <div class="package-content">
-                        <div class="package-features">
-                            <h4>Experience Includes:</h4>
-                            <ul class="feature-list">
-                                <li><span class="feature-icon"><i class="fas fa-tree"></i></span>
-                                    <span>Forest walk with storyteller who claims to have "vanished"</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>"Ashes of Vanishing" charm before entering the forest</span></li>
+                                    <span>Sleep with your bed on bricks, just as locals do to keep the Tokoloshe away</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-user-secret"></i></span>
+                                    <span>Night walk and fire-side storytelling with a Tokoloshe lore-keeper</span></li>
                                 <li><span class="feature-icon"><i class="fas fa-shield-alt"></i></span>
-                                    <span>Spirit protection blessing by Nyau apprentice</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-masks-theater"></i></span>
-                                    <span>Sunset ritual performance by dancers (where permitted)</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-utensils"></i></span>
-                                    <span>Traditional meal with local beer around sacred fire</span></li>
+                                    <span>Personal charm for spiritual protection</span></li>
                             </ul>
                         </div>
                         <a href="contact.html" class="btn">Request Journey</a>
                     </div>
                 </div>
-                <!-- Package 3 -->
+                <!-- Ghost Hunter's Guild -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3 class="package-title">Wealth, Witches & The Snake's Curse</h3>
+                        <h3 class="package-title">The Ghost Hunter's Guild: Whispering Ancestors</h3>
                         <div class="package-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Harare or Blantyre Charm Markets</span>
+                            <span>Zambia & Zimbabwe</span>
                         </div>
                     </div>
                     <div class="package-content">
                         <div class="package-features">
                             <h4>Experience Includes:</h4>
                             <ul class="feature-list">
-                                <li><span class="feature-icon"><i class="fas fa-money-bill-wave"></i></span>
-                                    <span>Visit to sites where "snake money" was discovered</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>"The Silent Snake" protection charm</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-user"></i></span>
-                                    <span>Conversation with locals who fled wealth curses</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-store"></i></span>
-                                    <span>Guided visit to charm marketplace with healer</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-water"></i></span>
-                                    <span>Optional river ceremony to "decline" spirit wealth</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-home"></i></span>
+                                    <span>Private access to haunted colonial mansions or ancient battlefields</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-user-astronaut"></i></span>
+                                    <span>Guidance by respected mediums and historians</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-camera"></i></span>
+                                    <span>Use of modern ghost-hunting equipment: infrared, spirit box</span></li>
                             </ul>
                         </div>
                         <a href="contact.html" class="btn">Request Journey</a>
                     </div>
                 </div>
-                <!-- Package 4 -->
+                <!-- Gule Wamkulu -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3 class="package-title">The Dream That Wasn't Yours</h3>
+                        <h3 class="package-title">Gule Wamkulu: Dance of the Ancestors</h3>
                         <div class="package-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Zomba/Chiradzulu Region, Malawi</span>
+                            <span>Malawi, Zambia</span>
                         </div>
                     </div>
                     <div class="package-content">
                         <div class="package-features">
                             <h4>Experience Includes:</h4>
                             <ul class="feature-list">
-                                <li><span class="feature-icon"><i class="fas fa-gem"></i></span>
-                                    <span>"Dream Caller" charm with guided ritual</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-fire"></i></span>
-                                    <span>Storytelling session with healer about spirit dreamers</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-theater-masks"></i></span>
+                                    <span>Private performance with the Nyau brotherhood</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-drum"></i></span>
+                                    <span>Immersive ritual with ancestral drumming and masked dancing</span></li>
                                 <li><span class="feature-icon"><i class="fas fa-book"></i></span>
-                                    <span>Personalized dream journal for guests</span></li>
+                                    <span>Deep-dive into Chewa cosmology, guided by a cultural anthropologist</span></li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Request Journey</a>
+                    </div>
+                </div>
+                <!-- Madzikirira Trance -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">The Nightly Hold: Madzikirira Trance</h3>
+                        <div class="package-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zimbabwe</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-features">
+                            <h4>Experience Includes:</h4>
+                            <ul class="feature-list">
                                 <li><span class="feature-icon"><i class="fas fa-brain"></i></span>
-                                    <span>Morning spiritual analysis of dreams</span></li>
-                                <li><span class="feature-icon"><i class="fas fa-door-closed"></i></span>
-                                    <span>Closing ceremony to "shut the dream gate"</span></li>
+                                    <span>Witness a mind-hold trance performed by a ritual practitioner</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-moon"></i></span>
+                                    <span>Private observation in a sacred hut</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-comments"></i></span>
+                                    <span>Q&A with the practitioner about the demonstration and its meaning</span></li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Request Journey</a>
+                    </div>
+                </div>
+                <!-- Oracle's Table -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">The Oracle's Table: Ancient Bones</h3>
+                        <div class="package-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zimbabwe, Zambia</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-features">
+                            <h4>Experience Includes:</h4>
+                            <ul class="feature-list">
+                                <li><span class="feature-icon"><i class="fas fa-bone"></i></span>
+                                    <span>Personal bone-throwing session with a renowned diviner</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-star"></i></span>
+                                    <span>Receive a bespoke reading—your destiny interpreted by the ancestors</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-book"></i></span>
+                                    <span>Photo documentation and written report (optional, privacy guaranteed)</span></li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Request Journey</a>
+                    </div>
+                </div>
+                <!-- Cleansing Ritual -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">The Cleansing Ritual</h3>
+                        <div class="package-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Malawi, Zimbabwe</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-features">
+                            <h4>Experience Includes:</h4>
+                            <ul class="feature-list">
+                                <li><span class="feature-icon"><i class="fas fa-fire"></i></span>
+                                    <span>Participate in a ceremonial smoke and incense cleansing led by a healer</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-leaf"></i></span>
+                                    <span>Premium herbal blend, prepared just for you</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-head-side-cough"></i></span>
+                                    <span>Private reflection and guided meditative closing</span></li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Request Journey</a>
+                    </div>
+                </div>
+                <!-- Ancestral Call -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">The Ancestral Call: Spirit World Witness</h3>
+                        <div class="package-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zimbabwe, Malawi</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-features">
+                            <h4>Experience Includes:</h4>
+                            <ul class="feature-list">
+                                <li><span class="feature-icon"><i class="fas fa-eye"></i></span>
+                                    <span>Observe a spirit-invitation trance, led by a respected medium</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-bolt"></i></span>
+                                    <span>Participate in a pre-ritual briefing to understand cultural context</span></li>
+                                <li><span class="feature-icon"><i class="fas fa-search"></i></span>
+                                    <span>Q&A and debrief with the medium after the ritual</span></li>
                             </ul>
                         </div>
                         <a href="contact.html" class="btn">Request Journey</a>
@@ -815,19 +1045,93 @@
             </div>
         </div>
     </section>
-    <!-- ...rest unchanged... (Charm Cards, Bracelet, CTA, Footer) -->
+    <!-- Sacred Spirit Charms Section -->
     <section class="charms-section">
         <div class="charms-container">
             <h2 class="section-title">Sacred Spirit Charms</h2>
-            <p class="philosophy-text">Each journey includes an authentic spiritual charm, crafted by village healers and presented in ceremonial leather pouches</p>
+            <p class="philosophy-text">Each journey includes an authentic spiritual charm, crafted by village healers and presented in ceremonial leather pouches.</p>
             <div class="charms-grid">
-                <!-- Charms content unchanged ... -->
-                <!-- ... -->
+                <!-- Charms as before... -->
+                <div class="charm-card">
+                    <div class="charm-number">01</div>
+                    <h3 class="charm-title">Eyes of the Ancestors</h3>
+                    <div class="charm-materials">
+                        <h4>Sacred Ingredients:</h4>
+                        <p>Burnt kola nut ash, baboon root, river dust</p>
+                    </div>
+                    <div class="charm-effect">
+                        <h4>Spiritual Purpose:</h4>
+                        <p>Sharpens "spirit vision" with ancestral permission</p>
+                    </div>
+                    <div class="charm-description">
+                        "They say this charm opens eyes that were never meant to open. Smear the ash lightly under each eye. If the spirits know your name, they may reveal something in the shadows."
+                    </div>
+                    <div class="charm-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Not everyone is meant to see. Use with respect. The eyes of the ancestors are always watching.</span>
+                    </div>
+                </div>
+                <div class="charm-card">
+                    <div class="charm-number">02</div>
+                    <h3 class="charm-title">The Silent Snake</h3>
+                    <div class="charm-materials">
+                        <h4>Sacred Ingredients:</h4>
+                        <p>Powdered python scale, copper thread, palm resin</p>
+                    </div>
+                    <div class="charm-effect">
+                        <h4>Spiritual Purpose:</h4>
+                        <p>Protection from snake spirits and wealth curses</p>
+                    </div>
+                    <div class="charm-description">
+                        "The snake may slither beside you, but it will not bite—if it recognizes this scent. Carry it at night. Especially near rivers or markets where the greedy spirits roam."
+                    </div>
+                    <div class="charm-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Never show this charm to strangers. Its power diminishes with disbelief.</span>
+                    </div>
+                </div>
+                <div class="charm-card">
+                    <div class="charm-number">03</div>
+                    <h3 class="charm-title">Ashes of Vanishing</h3>
+                    <div class="charm-materials">
+                        <h4>Sacred Ingredients:</h4>
+                        <p>Charcoal from Nyau dancer fires, ghost bean husks</p>
+                    </div>
+                    <div class="charm-effect">
+                        <h4>Spiritual Purpose:</h4>
+                        <p>Hides the wearer from spirit view in sacred places</p>
+                    </div>
+                    <div class="charm-description">
+                        "Nyau dancers smear this before they vanish into bottles or fire. Rub it on your wrist before crossing sacred places. If a presence passes, it may skip over you."
+                    </div>
+                    <div class="charm-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Do not use near burial sites. The ancestors may consider it disrespectful.</span>
+                    </div>
+                </div>
+                <div class="charm-card">
+                    <div class="charm-number">04</div>
+                    <h3 class="charm-title">Dream Caller</h3>
+                    <div class="charm-materials">
+                        <h4>Sacred Ingredients:</h4>
+                        <p>Moonflower petals, sleep bark, ancestor's root</p>
+                    </div>
+                    <div class="charm-effect">
+                        <h4>Spiritual Purpose:</h4>
+                        <p>Invites ancestral spirits into dreams for communication</p>
+                    </div>
+                    <div class="charm-description">
+                        "Boil into tea or place under your pillow. Do not speak before sleeping. If the spirit visits, ask only once: 'What do you want me to know?'"
+                    </div>
+                    <div class="charm-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Never use more than three nights consecutively. The door between worlds must remain balanced.</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Bracelet System, CTA, Footer, Scripts ... unchanged ... -->
-    <!-- ... -->
+    <!-- Bracelet System -->
     <section class="bracelet-section">
         <div class="bracelet-container">
             <h2 class="section-title">The "Chosen" Bracelet</h2>
@@ -867,6 +1171,77 @@
             </div>
         </div>
     </section>
+    <!-- Immersive Gallery Section -->
+    <section class="immersive-gallery-section">
+        <h2 class="section-title">Step Closer to the Unknown</h2>
+        <div class="gallery-masonry">
+            <div class="gallery-card">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Tokoloshe%20raised%20beds.png" alt="Tokoloshe beds">
+                <div class="gallery-caption">Why do locals sleep with beds on bricks? The Tokoloshe knows.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Madzikirira%20-%20induced%20trance_Africa%20supernatural%20paranormal%20tours.png" alt="Madzikirira Trance">
+                <div class="gallery-caption">Madzikirira: When spirit meets mind, even the body surrenders.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Nyau%20dancers.png" alt="Nyau Dancers">
+                <div class="gallery-caption">A secret brotherhood—where every mask is a living story.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Tokoloshe.png" alt="Tokoloshe">
+                <div class="gallery-caption">The mischievous sprite of Southern African folklore. See what hides in the shadows.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Haunted%20huts%20-%20Africa%20ghost%20tours.png" alt="Haunted Huts">
+                <div class="gallery-caption">Haunted huts: Where stories linger long after the fires die out.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Haunted%20buildings%20-%20ghost%20tours%20Africa.png" alt="Haunted Buildings">
+                <div class="gallery-caption">Colonial ghosts and ancestral energies—Africa’s haunted halls are alive with secrets.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Sacred%20pythons%20temple%20Benin.png" alt="Sacred Pythons Temple">
+                <div class="gallery-caption">Temple of Pythons: Where spiritual power slithers in the shadows.</div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ: Conversational Q&A -->
+    <section class="faq-section">
+        <h2 class="section-title">Curious? Nervous? Already Booking a Flight?</h2>
+        <div class="faq-container">
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">Will I really see a ghost or spirit?</div>
+                    <div class="faq-answer">We don’t guarantee spirits. We guarantee your world will never feel the same.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is all this respectful to local beliefs?</div>
+                    <div class="faq-answer">Absolutely. Every journey is guided by elders and spiritual leaders. You’re not an audience member. You’re an honored guest.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can my experience be 100% private?</div>
+                    <div class="faq-answer">Discretion is our first ritual. Your story is yours alone, and NDAs can be arranged upon request.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I participate in the rituals?</div>
+                    <div class="faq-answer">With permission, yes—but some secrets are only for the initiated. We always follow the guidance of our hosts.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I take photos or videos?</div>
+                    <div class="faq-answer">Some moments are for your eyes only. Where permitted, our team will capture professional photos for your private collection.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is it safe?</div>
+                    <div class="faq-answer">Your safety and dignity come first. All rituals are conducted with full local consent and guidance. Our team is with you every step of the journey.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What does it cost?</div>
+                    <div class="faq-answer">If you have to ask, you already know the answer. Each journey is bespoke, and pricing reflects its rarity and exclusivity.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-container">
             <h2 class="cta-title">Not Everyone Sees. But Everyone Feels.</h2>
@@ -874,6 +1249,7 @@
             <a href="contact.html" class="btn btn-primary">Request Your Paranormal Journey</a>
         </div>
     </section>
+    <!-- Footer -->
     <footer class='footer'>
         <div class='footer-grid'>
             <div class="footer-brand">
@@ -937,6 +1313,16 @@
         const floatingBtn = document.querySelector('.floating-curator');
         floatingBtn.addEventListener('click', function() {
             window.location.href = 'contact.html';
+        });
+        // Interactive FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+            });
         });
     </script>
 </body>
