@@ -195,7 +195,7 @@
         }
 
         .hero-title {
-            font-size: 82px;
+            font-size: 62px;
             font-weight: 700;
             margin-bottom: 30px;
             letter-spacing: 1px;
@@ -263,7 +263,7 @@
         /* Experience Categories */
         .categories-section {
             padding: 120px 0;
-            background: url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Land%20rover%20road%20trips%20Africa.png') center center/cover no-repeat;
+            background: url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Cape%20winelands%20-%20Onayi%20Africa.png') center center/cover no-repeat;
             background-attachment: fixed;
         }
 
@@ -552,7 +552,7 @@
             opacity: 0.9;
         }
 
-        /* Footer */
+      /* Footer */
         .footer {
             background: var(--obsidian);
             color: var(--ivory);
@@ -566,10 +566,81 @@
             gap: 60px;
             margin-bottom: 60px;
         }
-
-        /* Reduce gap between specific sections */
-        .cta-section {
-            margin-top: -60px;
+        .footer-brand { display: flex; flex-direction: column;}
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        .footer-about {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+        .social-links { display: flex; gap: 20px;}
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-5px);
+        }
+        .footer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+        }
+        .footer-links { list-style: none; padding: 0;}
+        .footer-links li { margin-bottom: 15px;}
+        .footer-links a {
+            color: var(--ivory);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            font-size: 17px;
+            display: inline-block;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 50px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 15px;
+            opacity: 0.6;
         }
 
         /* Concierge Section background (used for full concierge experience) */
@@ -691,7 +762,7 @@
                 <div class="category-card" tabindex="0">
                     <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Road%20trips%20in%20vintage%20cars.png" alt="Africa Time Travel" class="category-img">
                     <div class="category-overlay">
-                        <h3 class="category-title">Africa Time Travel: Road Trips in Vintage Cars</h3>
+                        <h3 class="category-title">Road Trips in Vintage Cars</h3>
                         <p class="category-description">Your fantasy Oldsmobile, hand-picked for a bespoke route through Africa’s most jaw-dropping scenery. This isn’t just a road trip. It’s a nostalgic, cinematic adventure—where your story is written on the road, not the itinerary.</p>
                         <a href="experiences.html#vintage-cars" class="category-link">Start Your Engine <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -702,7 +773,7 @@
                     <div class="category-overlay">
                         <h3 class="category-title">Insane Otherworldly Locations</h3>
                         <p class="category-description">Do what you love in places no one else can. Star-gaze from an exclusive plateau in Namibia’s Fish River Canyon, feast under the Milky Way, and awaken to champagne breakfast in a land that feels like another planet.</p>
-                        <a href="experiences.html#forbidden-sites" class="category-link">See the Impossible <i class="fas fa-arrow-right"></i></a>
+                        <a href="experiences.html#insane-locations" class="category-link">See the Impossible <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <!-- Golfing in Unusual Places -->
