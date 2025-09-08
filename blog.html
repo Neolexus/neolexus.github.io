@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onayi Africa Blog | Epic Journeys & Bespoke Adventures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Gold Dot Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23D4AF37%22/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sapphire: #0A2463;
+            --gold: #D4AF37;
+            --gold-light: #e6c875;
+            --ivory: #F8F4E9;
+            --charcoal: #1E1E1E;
+            --obsidian: #0c0c16;
+        }
+        html,body {
+            background: var(--obsidian);
+            color: var(--ivory);
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0; padding: 0;
+            font-size: 105%;
+            line-height: 1.8;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(12, 12, 22, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+        .logo::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-left: 12px;
+            animation: pulse 2s infinite;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        .nav-menu li {
+            margin-left: 40px;
+            position: relative;
+        }
+        .nav-menu a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--ivory);
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            transition: all 0.4s;
+            position: relative;
+            text-transform: uppercase;
+            padding: 10px 0;
+            opacity: 0.9;
+        }
+        .nav-menu a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+            transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        .blog-hero {
+            background: linear-gradient(rgba(10,36,99,.68),rgba(10,36,99,.7)), url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Serengeti%20in%20Glass%20-%20Onayi%20Africa.jpg') center center/cover no-repeat;
+            padding: 120px 0 60px 0;
+            text-align: center;
+        }
+        .blog-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--gold);
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+        }
+        .blog-hero-subtitle {
+            max-width: 700px;
+            font-size: 24px;
+            margin: 0 auto;
+            font-style: italic;
+            opacity: .95;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 5vw 80px 5vw;
+            background: rgba(12,12,22,0.90);
+            border-radius: 10px;
+            box-shadow: 0 10px 60px rgba(10,36,99,.09);
+        }
+        article {
+            margin-bottom: 70px;
+        }
+        .blog-image {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            border-radius: 7px;
+            box-shadow: 0 5px 30px rgba(212,175,55,.13);
+            margin: 24px 0 18px 0;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-top: 38px;
+            margin-bottom: 15px;
+            font-size: 36px;
+            line-height: 1.23;
+        }
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--gold-light);
+            font-size: 22px;
+            margin-top: 28px;
+            margin-bottom: 6px;
+        }
+        .footer {
+            background: var(--obsidian);
+            color: var(--ivory);
+            padding: 100px 0 50px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        .footer-about {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-5px);
+        }
+        .footer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: var(--ivory);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            font-size: 17px;
+            display: inline-block;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 50px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 15px;
+            opacity: 0.6;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 16px 3vw 40px 3vw;}
+            h2 { font-size: 25px;}
+            .blog-hero-title { font-size: 30px; }
+            .blog-hero { padding: 80px 0 22px 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class='header' id='header'>
+        <div class='nav-container'>
+            <a href='/' class='logo'>ONAYI</a>
+            <ul class='nav-menu'>
+                <li><a href='experiences.html'>Experiences</a></li>
+                <li><a href='paranormal.html'>Paranormal</a></li>
+                <li><a href='gallery.html'>Gallery</a></li>
+                <li><a href='about.html'>About You</a></li>
+                <li><a href='shop.html'>Curio Shop</a></li>
+                <li><a href='blog.html'>Blog</a></li>
+                <li><a href='contact.html'>Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div>
+            <h1 class="blog-hero-title">The Onayi Africa Logbook</h1>
+            <div class="blog-hero-subtitle">
+                Stories and secrets from the wild edge of luxury travel. Curated by George Chapungu, your Experience Curator.
+            </div>
+        </div>
+    </section>
+    <!-- Blog Content -->
+    <div class="container">
+        <!-- Article 1: Epic Golfing & Remote Sporting -->
+        <article>
+            <h2>Epic Golfing Where the Map Turns Blank</h2>
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Salt%20plains%20golf.png" class="blog-image" alt="Salt plains golf Onayi Africa">
+            <p>
+                If you think golf is all tartan pants and polite applause, let me take you somewhere wilder. I’m George Chapungu, and I grew up believing Africa’s best stories started at sunrise and ended with stars. But even I didn’t imagine a golf course on the Makgadikgadi Salt Pans of Botswana—a stretch of white so vast it looks like you’ve landed on a different planet. We call it The Infinity Course.
+            </p>
+            <p>
+                Here, there’s no fairway, no gallery, no rules but the ones you make. Just a single flag in the distance and you, a caddie from the San people reading the breeze, and a biodegradable ball filled with wildflower seeds. Miss the shot? You’ve just planted hope for future zebras. Sink the putt? You’ve won the ultimate minimalist challenge. This is golf as meditation, golf as story, golf as “did I just see a mirage or was that a flamingo?”
+            </p>
+            <p>
+                Not enough altitude for you? Let’s helicopter up the lower slopes of Kilimanjaro for a par-3 shot you’ll remember forever. The air is sharp, thin, and electric. Your ball arcs into the African sky and lands somewhere on the savannah below, where tomorrow, your private course awaits. I promise, it’s the only golf game where you’ll lose balls to both gravity and giraffes.
+            </p>
+            <h3>Polo in the Serengeti: The Great Game</h3>
+            <p>
+                Now, imagine a polo match in a hidden corner of the Serengeti. The field? Whatever patch of grass the zebras aren't using. The only crowd is a dazzle of giraffes, and the club house pops up for one sunset only. Our horses come pampered, our cocktails come cold, and the only rule is to play until the sun melts into the horizon. 
+            </p>
+            <h3>Namibia’s Desert-to-Coast Off-Road Rally</h3>
+            <p>
+                Maybe you crave a little speed? Our off-road rally from the dunes of Sossusvlei through Damaraland, ending on the Skeleton Coast, is not for the faint of heart. You’ll chase the horizon in a custom vehicle, race the sunset, and sleep in glamping style. This isn’t just a drive—it’s an adrenaline-fueled odyssey where the only thing more epic than the sand is your own story.
+            </p>
+            <p>
+                This is what we do at Onayi Africa: We throw out the playbook and design moments that can’t be repeated. If your soul stirs for unusual Africa, let’s write your next legend together.
+            </p>
+        </article>
+        <!-- Article 2: Extreme Rhino Chase Safari -->
+        <article>
+            <h2>Rhino Chase Safari: Adrenaline Meets Conservation</h2>
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Rhino%20chase.png" class="blog-image" alt="Rhino Chase Safari">
+            <p>
+                Forget the classic game drive. How about helping to save rhinos by chasing them? (Okay, not literally chasing them—no rhinos are harassed on my watch.) This is Africa’s most extreme safari, and you’ll be right in the thick of it with professional rangers, tracking these majestic giants across the bush.
+            </p>
+            <p>
+                Your day starts before sunrise, hot coffee in hand, as you load up with our anti-poaching unit. We’re tracking signals, reading spoor, and scanning the horizon for dust and movement. Sometimes, it means a high-speed dash through the bush—heart hammering, every sense awake. But the goal is always the same: to observe, protect, and understand.
+            </p>
+            <p>
+                The thrill isn’t just about speed (though trust me, the speed is real). It’s about being part of something bigger: a conservation mission where every sighting matters. You’ll end the day with a sundowner by the fire, stories traded with rangers who have seen things you wouldn’t believe. This is adventure with a purpose—ecotourism at its wildest, and it’s only at Onayi Africa.
+            </p>
+        </article>
+        <!-- Article 3: Africa Time Travel: Vintage Car Road Trips -->
+        <article>
+            <h2>Vintage Car Road Trips: Africa, Rewired for Nostalgia</h2>
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Road%20trips%20in%20vintage%20cars.png" class="blog-image" alt="Vintage Car Road Trips">
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Land%20rover%20road%20trips%20Africa.png" class="blog-image" alt="Land rover road trips Africa">
+            <p>
+                My guilty pleasure? Oldsmobiles. (Don’t judge—I like my adventures with a little chrome and a lot of attitude.) At Onayi Africa, we’ve taken the classic road trip and given it a luxury twist worthy of a movie montage.
+            </p>
+            <p>
+                Picture this: You pick your dream vintage ride. Maybe it’s a 1967 Land Rover, maybe something even rarer. We restore it, prep it, and map out a route through Africa’s most jaw-dropping scenery. You’ll rumble through ancient deserts, skirt flaming volcanoes, and pause for sundowners in places with no names. The only playlist? The purr of your engine and laughter from the passenger seat.
+            </p>
+            <p>
+                Why settle for ordinary when you can time travel with style? This is nostalgia, tailored to you, with every detail dialed in. Leave the logistics to me—just bring your wildest dream and a sense of humor.
+            </p>
+        </article>
+        <!-- Article 4: Wellness Experiences On the Edge -->
+        <article>
+            <h2>Wellness on the Edge: Rethink Your Retreat</h2>
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/African%20spa%20ritual.png" class="blog-image" alt="African spa ritual">
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Helicopter%20yoga%20on%20Mount%20Kilimanjaro.png" class="blog-image" alt="Helicopter yoga on Mount Kilimanjaro">
+            <p>
+                Here’s a challenge: try meditating while a breeze tugs at your mat and a herd of kudu watches from the next dune. Our wellness experiences toss out the bland white walls and bring you into Africa’s rawest, most soulful places.
+            </p>
+            <p>
+                You’ll do yoga on a salt pan shimmering with mirages, drum with local healers beneath a baobab tree, and let a sangoma’s chanting reset your spirit. Forget the sound bath—try a djembe rhythm, or a horn scraping massage under the world’s biggest sky. This is wellness for the adventurous, for those who believe the best reset is the one that leaves your shoes dusty and your soul humming.
+            </p>
+            <p>
+                Why settle for a spa menu when you could have an epic? At Onayi Africa, finding your center means going to the edge of the map.
+            </p>
+        </article>
+        <!-- Article 5: Zambezi Under the Stars -->
+        <article>
+            <h2>Zambezi Under the Stars: Nocturnal Rafting</h2>
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Adrenaline%20night%20rafting%20-%20Zambezi%20river.png" class="blog-image" alt="Zambezi Nocturnal Rafting">
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Night%20rafting.png" class="blog-image" alt="Night rafting Africa">
+            <p>
+                Anyone can ride the Zambezi by day. But by night? That’s a different animal entirely. This is not just rafting—it’s a night-time odyssey with underwater lights, glow sticks, and the Milky Way as your only ceiling.
+            </p>
+            <p>
+                Imagine: a gourmet dinner by the river, then a safety briefing (because, yes, mom, we care), and off you go—paddling through Class III-IV rapids with guides who know the river’s every whisper. The water glows, the stars reflect, and the only things louder than your heart are the river and the laughter from your raft.
+            </p>
+            <p>
+                We’ll pull onto sandbanks for hot cocoa and stargazing, then race the current home for a midnight bonfire. This is the Zambezi at its most magical, and the stories you’ll tell will be the envy of every adventure-seeker you know. (Just don’t try it alone—this is pro-level, luxury-only madness.)
+            </p>
+        </article>
+        <!-- Article 6: Egypt's Hidden Tombs - VR Time Travel -->
+        <article>
+            <h2>Time Travel in Egypt: VR Into Hidden Tombs</h2>
+            <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Time%20travel%20Egypt%20hidden%20tombs.png" class="blog-image" alt="VR Egypt Hidden Tombs">
+            <p>
+                Let’s get nerdy for a second. What if I told you that you could slip on a headset and step inside a tomb no one’s seen in 2,000 years? I’ve always loved a good time travel story, and with our exclusive VR Egypt adventure, you’ll live one.
+            </p>
+            <p>
+                Start in Cairo, sipping mint tea as I brief you on your digital journey. Then, with a flicker of light, you’re inside a hidden tomb—hieroglyphs glowing, gold leaf untouched by time, and a silence so deep it feels holy. You can reach out (in a manner of speaking) and trace the stories of ancient kings. Want to see the priest’s secret passage? Just say the word.
+            </p>
+            <p>
+                Our VR experience isn’t a museum visit. It’s immersion, guided by Egyptologists who’ve spent their lives unlocking these secrets. You’ll see tombs closed to the public, walk corridors that would take weeks to excavate, and unlock mysteries with just a nod.
+            </p>
+            <p>
+                Of course, nothing beats the real thing, so we pair the virtual with the physical: a private tour of Egypt’s best-kept wonders, minus the crowds, plus all the context. The future of travel is here, and it’s more magical than any Hollywood reboot.
+            </p>
+            <p>
+                So, are you ready to step out of the ordinary and into the extraordinary? Let’s make your story one for the ages.
+            </p>
+            <p style="color:var(--gold);font-style:italic;text-align:right;">— George Chapungu, your Experience Curator</p>
+        </article>
+    </div>
+    <!-- Footer -->
+    <footer class='footer'>
+        <div class='footer-grid'>
+            <div class="footer-brand">
+                <a href='/' class='footer-logo'>ONAYI</a>
+                <p class='footer-about'>Crafting unrepeatable moments across Africa's most extraordinary locations. For those who seek more than destinations.</p>
+                <div class='social-links'>
+                    <a href='#'><i class='fab fa-instagram'></i></a>
+                    <a href='#'><i class='fab fa-twitter'></i></a>
+                    <a href='#'><i class='fab fa-facebook'></i></a>
+                    <a href='#'><i class='fab fa-linkedin'></i></a>
+                </div>
+            </div>
+            <div class='footer-col'>
+                <h3 class='footer-title'>Explore</h3>
+                <ul class='footer-links'>
+                    <li><a href='experiences.html'>Signature Experiences</a></li>
+                    <li><a href='paranormal.html'>Paranormal Journeys</a></li>
+                    <li><a href='gallery.html'>Gallery</a></li>
+                    <li><a href='experiences.html'>Epic Safari</a></li>
+                    <li><a href='#'>Insane Locations</a></li>
+                </ul>
+            </div>
+            <div class='footer-col'>
+                <h3 class='footer-title'>Onayi</h3>
+                <ul class='footer-links'>
+                    <li><a href='about.html'>About You</a></li>
+                    <li><a href='shop.html'>Curio Shop</a></li>
+                    <li><a href='gallery.html'>Gallery</a></li>
+                    <li><a href='#'>Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class='footer-col'>
+                <h3 class='footer-title'>Contact Us</h3>
+                <ul class='footer-links'>
+                    <li><a href='mailto:curator@anoqi.africa'>curator@anoqi.africa</a></li>
+                    <li><a href='tel:+263710309994</a></li>
+                    <li><a href='contact.html'>Bespoke Request</a></li>
+                    <li><a href='#'>24/7 Emergency Line</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class='footer-bottom'>
+            <p>&copy; 2025 Onayi Africa. All experiences are subject to availability. We craft journeys your friends can't copy. | Designed for the Unrepeatable Life</p>
+        </div>
+    </footer>
+</body>
+</html>
