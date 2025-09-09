@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Safari Redefined | Onayi Africa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon & Fonts -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23D4AF37%22/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #e6c875;
+            --ivory: #F8F4E9;
+            --charcoal: #1E1E1E;
+            --obsidian: #0c0c16;
+            --bronze: #CD7F32;
+            --velvet: #1a0d2e;
+            --mystic: #1c1127;
+            --glass-bg: rgba(20, 18, 27, 0.68);
+            --sapphire: #0A2463;
+            --luxury-card: rgba(32, 17, 54, 0.91);
+            --luxury-bg: rgba(12, 12, 22, 0.85);
+            --section-bg: rgba(28, 17, 39, 0.74);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Montserrat', serif;
+            color: var(--ivory);
+            background: var(--obsidian);
+            font-size: 108%;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(10, 36, 99, 0.1) 0%, transparent 20%);
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSgyMTIsIDE3NSwgNTUsIDAuMDcpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+            opacity: 0.18;
+            z-index: -1;
+            pointer-events: none;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* Header */
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0; left: 0;
+            background: var(--luxury-bg);
+            z-index: 100;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.09);
+            border-bottom: 1px solid rgba(212,175,55,0.12);
+            backdrop-filter: blur(12px);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 30px;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+        .logo::after {
+            content: '';
+            width: 8px; height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-left: 12px;
+            animation: pulse 2s infinite;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-menu li a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--ivory);
+            font-size: 15.5px;
+            letter-spacing: 1.2px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.33s;
+        }
+        .nav-menu li a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+        .nav-menu li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width .28s;
+        }
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);}
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);}
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);}
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background:
+                linear-gradient(120deg, rgba(24,18,35,0.61) 0%, rgba(24,18,35,0.47) 100%),
+                url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Safari%20popup%20large.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 200px 20px 160px 20px;
+            text-align: center;
+            background: rgba(14, 9, 19, 0.15);
+            border-radius: 18px;
+        }
+        .hero-title {
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 40px #0007, 0 1px 0 var(--sapphire);
+        }
+        .hero-subtitle {
+            font-size: 26px;
+            color: var(--ivory);
+            font-weight: 400;
+            line-height: 1.5;
+            opacity: 0.96;
+            margin-bottom: 32px;
+            text-shadow: 0 2px 20px #000b;
+        }
+
+        /* Section Titles */
+        .section {
+            position: relative;
+            padding: 110px 0 70px 0;
+        }
+        .section-title {
+            font-size: 42px;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .section-intro {
+            color: var(--ivory);
+            font-size: 22px;
+            opacity: 0.93;
+            text-align: center;
+            margin: 0 auto 65px auto;
+            max-width: 700px;
+        }
+
+        /* Vision Section */
+        .vision-section {
+            background: linear-gradient(120deg, rgba(15, 11, 28, 0.91) 60%, rgba(10, 12, 22, 0.95) 100%);
+        }
+
+        /* Signature Safari Experiences Section */
+        .signature-section {
+            background:
+                linear-gradient(120deg, rgba(30, 20, 39, 0.77) 70%, rgba(20, 12, 30, 0.89) 100%),
+                url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Predator%20and%20prey%20immersion.%20Lions%20safari.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .experience-card-row {
+            display: flex;
+            gap: 38px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .experience-card {
+            background: rgba(32, 17, 54, 0.92);
+            border: 1.5px solid rgba(212, 175, 55, 0.37);
+            border-radius: 22px;
+            box-shadow: 0 7px 34px 0 rgba(10,36,99,0.17);
+            overflow: hidden;
+            max-width: 355px;
+            min-width: 290px;
+            flex: 1 1 340px;
+            position: relative;
+            transition: box-shadow 0.35s, transform 0.35s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            min-height: 540px;
+        }
+        .experience-card:hover {
+            box-shadow: 0 18px 80px 0 rgba(212,175,55,0.22), 0 8px 22px rgba(212,175,55,0.26);
+            transform: translateY(-11px) scale(1.03);
+            border-color: var(--gold);
+        }
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .card-content {
+            padding: 32px 28px 30px 28px;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .card-title {
+            font-size: 24px;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        .card-subtitle {
+            font-size: 15px;
+            color: var(--gold);
+            opacity: 0.8;
+            margin-bottom: 16px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        .card-desc {
+            font-size: 16.7px;
+            color: var(--ivory);
+            opacity: 0.97;
+        }
+
+        /* Pushing Boundaries Section */
+        .boundaries-section {
+            background:
+                linear-gradient(120deg, rgba(28, 17, 39, 0.82) 70%, rgba(20, 12, 30, 0.91) 100%),
+                url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Predator%20and%20prey%20immersion.%20Lions%20safari.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .reveal-cards {
+            display: flex;
+            gap: 44px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 65px;
+        }
+        .reveal-card {
+            background: rgba(32, 17, 54, 0.93);
+            border: 1.6px solid rgba(212, 175, 55, 0.38);
+            border-radius: 25px;
+            box-shadow: 0 8px 44px rgba(10,36,99,0.18);
+            position: relative;
+            max-width: 400px;
+            min-width: 290px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.38s, transform 0.38s;
+            cursor: pointer;
+        }
+        .reveal-card:hover {
+            box-shadow: 0 18px 80px 0 rgba(212,175,55,0.25), 0 9px 28px rgba(212,175,55,0.16);
+            border-color: var(--gold);
+            transform: scale(1.04) translateY(-8px);
+        }
+        .reveal-card-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+        .reveal-card-content {
+            padding: 28px 23px 30px 23px;
+        }
+        .reveal-card-title {
+            font-size: 21px;
+            color: var(--gold-light);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+        .reveal-card-desc {
+            font-size: 16.3px;
+            color: var(--ivory);
+            opacity: 0.97;
+        }
+
+        /* Conservation Catalyst Section */
+        .conservation-section {
+            background:
+              linear-gradient(120deg, rgba(30, 20, 39, 0.84) 70%, rgba(20, 12, 30, 0.93) 100%),
+              url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Orphaned%20rhino%20-%20adopt%20an%20animal.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .philanthropy-row {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 60px;
+        }
+        .philanthropy-card {
+            background: rgba(17, 10, 28, 0.95);
+            border: 1.7px solid rgba(212, 175, 55, 0.24);
+            border-radius: 22px;
+            box-shadow: 0 4px 16px rgba(212,175,55,0.08);
+            max-width: 350px;
+            min-width: 270px;
+            padding: 38px 28px 36px 28px;
+            transition: box-shadow 0.32s, border-color 0.32s, transform 0.32s;
+            cursor: pointer;
+        }
+        .philanthropy-card:hover {
+            box-shadow: 0 14px 44px 0 rgba(212,175,55,0.13), 0 8px 22px rgba(212,175,55,0.15);
+            border-color: var(--gold);
+            transform: scale(1.035) translateY(-8px);
+        }
+        .philanthropy-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--gold-light);
+            margin-bottom: 7px;
+        }
+        .philanthropy-subtitle {
+            font-size: 14.6px;
+            color: var(--gold);
+            opacity: 0.82;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+        }
+        .philanthropy-desc {
+            font-size: 16px;
+            color: var(--ivory);
+            opacity: 0.96;
+        }
+
+        /* Legacy Adoption Section */
+        .legacy-section {
+            background:
+              linear-gradient(120deg, rgba(8,8,18,0.83) 70%, rgba(12, 12, 22, 0.90) 100%),
+              url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Rhino%20chase.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .legacy-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 44px;
+            margin-top: 60px;
+        }
+        .legacy-desc-block {
+            flex: 1 1 350px;
+            min-width: 300px;
+            max-width: 600px;
+            background: rgba(17, 10, 28, 0.92);
+            border-radius: 20px;
+            padding: 42px 34px 36px 34px;
+            color: var(--ivory);
+            font-size: 19px;
+            opacity: 0.97;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 14px rgba(212,175,55,0.07);
+        }
+        .legacy-img-block {
+            flex: 1 1 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            justify-content: flex-start;
+            min-width: 280px;
+            max-width: 410px;
+        }
+        .legacy-img-block img {
+            max-width: 100%;
+            border-radius: 19px;
+            box-shadow: 0 10px 48px #0004;
+            border: 2.5px solid rgba(212,175,55,0.10);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background:
+                linear-gradient(120deg, rgba(12, 12, 22, 0.59) 80%, rgba(12, 12, 22, 0.82) 100%),
+                url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Black%20rhino%20anti-poaching%20and%20wildlife%20protection.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 100px 0 120px 0;
+        }
+        .cta-title {
+            font-size: 42px;
+            color: var(--gold);
+            margin-bottom: 24px;
+            font-family: 'Playfair Display', serif;
+        }
+        .cta-desc {
+            font-size: 21px;
+            color: var(--ivory);
+            opacity: 0.93;
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, var(--gold) 67%, var(--gold-light) 100%);
+            color: var(--charcoal);
+            border: none;
+            border-radius: 22px;
+            padding: 20px 56px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 19px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 7px 24px rgba(212, 175, 55, 0.19);
+            transition: box-shadow 0.36s, transform 0.27s;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 16px 56px rgba(212, 175, 55, 0.24);
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        /* Footer Section (copied and adapted from onayi-africa.html) */
+        .footer {
+            background: var(--obsidian);
+            color: var(--ivory);
+            padding: 100px 0 50px;
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        .footer-brand { display: flex; flex-direction: column;}
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        .footer-about {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+        .social-links { display: flex; gap: 20px;}
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-5px);
+        }
+        .footer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+        }
+        .footer-links { list-style: none; padding: 0;}
+        .footer-links li { margin-bottom: 15px;}
+        .footer-links a {
+            color: var(--ivory);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            font-size: 17px;
+            display: inline-block;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 50px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 15px;
+            opacity: 0.6;
+        }
+        @media (max-width: 1150px) {
+            .experience-card-row, .reveal-cards, .philanthropy-row, .legacy-flex {
+                flex-direction: column;
+                gap: 35px;
+            }
+            .card-image, .reveal-card-img { height: 180px; }
+        }
+        @media (max-width: 780px) {
+            .hero-title { font-size: 32px; }
+            .hero-content { padding: 120px 10px 90px 10px; }
+            .section-title { font-size: 26px; }
+            .card-title, .reveal-card-title { font-size: 18px; }
+            .cta-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">ONAYI</a>
+            <ul class="nav-menu">
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="safari-redefined.html" style="color:var(--gold)">Safari Redefined</a></li>
+                <li><a href="paranormal.html">Paranormal</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About You</a></li>
+                <li><a href="shop.html">Curio Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Safari As You've Never Experienced It.</h1>
+            <p class="hero-subtitle">
+                Forget the game drive. This is Africa, built for you. Where unparalleled luxury meets the raw, untamed wild, and your journey becomes a legacy.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 1: The Vision -->
+    <section class="section vision-section">
+        <h2 class="section-title">Beyond the Horizon</h2>
+        <div class="section-intro">
+            We believe a true safari goes beyond watching wildlife—you have to connect with it. You're more than a tourist; you're an explorer, a philanthropist, and a witness to Africa's most breathtaking secrets. Best of all, our journeys are custom-built, designed for those who seek the impossible, the soul-stirring. This is your canvas, and Africa is your masterpiece.
+        </div>
+    </section>
+
+    <!-- Section 2: Signature Safari Experiences -->
+    <section class="section signature-section">
+        <h2 class="section-title">Your Signature Journey</h2>
+        <div class="section-intro">
+            What if your wildest “what if” could step straight into reality? Our core experiences are crafted to dissolve the line between imagination and memory—putting you not beside the wild, but inside it. From glass domes to classic wheels, these are the experiences that put you at the heart of the adventure, on your own terms.
+        </div>
+        <div class="experience-card-row">
+            <!-- Card 1 -->
+            <div class="experience-card">
+                <img class="card-image" src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Serengeti%20in%20Glass%20-%20Onayi%20Africa.jpg" alt="Sentinel Pod">
+                <div class="card-content">
+                    <div class="card-title">The Sentinel Pod</div>
+                    <div class="card-subtitle">Serengeti, Tanzania</div>
+                    <div class="card-desc">
+                        A minimalist glass cube, impossibly situated amidst the Great Migration. No walls. Just you, the stars, and the rumbling thunder of a million hooves. Your personal chef, sommelier, and ranger are a discreet whisper away. You are not observing the wild. You are living inside it.
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="experience-card">
+                <img class="card-image" src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Safari%20in%20vintage%20car.png" alt="Vintage Veld">
+                <div class="card-content">
+                    <div class="card-title">The Vintage Veld</div>
+                    <div class="card-subtitle">Kruger National Park, South Africa</div>
+                    <div class="card-desc">
+                        Pick your ride: a sleek 1959 Oldsmobile Sedan, a rugged '68 Wagon, or a classic '72 4x4. The road is yours. Enjoy a sundowner from the hood of your convertible as a lion pride passes by, or chase a dust trail of elephants from your air-conditioned cabin. This is freedom, with a touch of old-world class.
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="experience-card">
+                <img class="card-image" src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Black%20rhino%20anti-poaching%20and%20wildlife%20protection.png" alt="Operation Black Rhino">
+                <div class="card-content">
+                    <div class="card-title">Operation Black Rhino</div>
+                    <div class="card-subtitle">Matobo Hills, Zimbabwe</div>
+                    <div class="card-desc">
+                        This isn't a game drive; it's a high-octane mission. You'll join an elite anti-poaching team and a top veterinary unit. From a helicopter, you'll help track and immobilize a black rhino. Then, on the ground, you'll be hands-on with the de-horning and DNA tagging process. It's a race against time and a front-row seat to the future of conservation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Pushing Safari Boundaries -->
+    <section class="section boundaries-section">
+        <h2 class="section-title">Pushing Safari Boundaries</h2>
+        <div class="section-intro">
+            Step beyond the expected. The wild is not a backdrop—it's the stage for extraordinary, unrepeatable moments. These are immersive, once-in-a-lifetime experiences, engineered to transform your idea of adventure and luxury.
+        </div>
+        <div class="reveal-cards">
+            <!-- Pop-Up Lodge -->
+            <div class="reveal-card">
+                <img class="reveal-card-img" src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Popup%20safari%20lodge.png" alt="Pop-Up Lodge">
+                <div class="reveal-card-content">
+                    <div class="reveal-card-title">The Pop-Up Lodge</div>
+                    <div class="reveal-card-desc">
+                        Forget the same old lodges and predictable hotel rooms. This is the ultimate, unrepeatable hideaway. We'll erect a single-use architectural masterpiece just for you in a breathtaking, remote location. A glass prism reflecting the stars, a geometric nest in the trees, or a suspended retreat that feels like it’s floating. Every detail is built to your taste. When you leave, we dismantle it without a trace—leaving only your memories.
+                    </div>
+                </div>
+            </div>
+            <!-- Predator & Prey Immersion -->
+            <div class="reveal-card">
+                <img class="reveal-card-img" src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Predator%20and%20prey%20immersion.%20Lions%20safari.png" alt="Predator & Prey Immersion">
+                <div class="reveal-card-content">
+                    <div class="reveal-card-title">Predator & Prey Immersion</div>
+                    <div class="reveal-card-desc">
+                        Your Private Nature Documentary. No more glimpses from a jeep. From a private vantage, watch a lion hunt, a cheetah stalk, or a buffalo defend its young—live, in cinematic detail. A network of silent, camouflaged drones and sensors streams every moment, narrated by a top expert. You’re the director of an unscripted spectacle you’ll never forget.
+                    </div>
+                </div>
+            </div>
+            <!-- Culinary Expedition -->
+            <div class="reveal-card">
+                <img class="reveal-card-img" src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Culinary%20safari%20expedition.png" alt="Culinary Expedition">
+                <div class="reveal-card-content">
+                    <div class="reveal-card-title">Culinary Expedition: The Movable Feast Safari</div>
+                    <div class="reveal-card-desc">
+                        This isn't just about dinner; it's about the adventure of eating. Our chefs bring a movable feast into the wild. Breakfast in a dry riverbed, lunch as a picnic overlooking the Rift Valley, dinner on a giant slab of rock under the stars. Every meal is theatre—so unique it could happen only once, for you.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Conservation Catalyst -->
+    <section class="section conservation-section">
+        <h2 class="section-title">The Legacy Collection</h2>
+        <div class="section-intro">
+            The truest luxury is the chance to leave something behind. Each of our conservation pathways turns your safari into an act of protection, empowerment, and renewal—ensuring that Africa’s wildlife thrives as brightly as your memories.
+        </div>
+        <div class="philanthropy-row">
+            <!-- Card 1 -->
+            <div class="philanthropy-card">
+                <div class="philanthropy-title">The Ranger Fund</div>
+                <div class="philanthropy-subtitle">Mana Pools, Zimbabwe</div>
+                <div class="philanthropy-desc">
+                    Every great story has a hero. For Africa's wildlife, it's the anti-poaching ranger. Your investment can fully equip a ranger unit for a year—providing state-of-the-art drones, reliable vehicles, and essential communication gear. This isn't just a donation; it's a lifeline.
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="philanthropy-card">
+                <div class="philanthropy-title">The Community Trust</div>
+                <div class="philanthropy-subtitle">Okavango Delta, Botswana</div>
+                <div class="philanthropy-desc">
+                    Wildlife flourishes when people flourish first. By joining a trust, you empower local villages to own their conservation story—funding schools, clean water, and infrastructure that secures a sustainable coexistence. Because of you, communities thrive alongside wildlife.
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="philanthropy-card">
+                <div class="philanthropy-title">The Biodiversity Credit</div>
+                <div class="philanthropy-subtitle">Chewore South, Zimbabwe</div>
+                <div class="philanthropy-desc">
+                    Step into the next era of conservation finance. By acquiring a biodiversity credit, you’re not just funding protection—you’re purchasing proof of a measurable, positive ecological outcome. Direct, verified, transformational partnership with the Chewore Conservation Trust. This is a first-of-its-kind opportunity to invest directly in the protection of a critical ecosystem.
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="philanthropy-card">
+                <div class="philanthropy-title">The Private Concession</div>
+                <div class="philanthropy-subtitle">Ruaha National Park, Tanzania</div>
+                <div class="philanthropy-desc">
+                    An unmatched opportunity for the ultimate philanthropist. It's your chance to co-fund or even establish your own private conservation concession. You'll work directly with local authorities to manage and protect vast tracts of land, creating your own reserve and securing a legacy that will last for generations.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Legacy Conservation -->
+    <section class="section legacy-section">
+        <h2 class="section-title">Legacy Conservation: Adopt an Animal</h2>
+        <div class="legacy-flex">
+            <div class="legacy-desc-block">
+                Have you ever wanted to leave a legacy that truly matters? Our safari is your chance to do more than just see the wild; it's your opportunity to become a protector. This is a conservation-first experience where your personal impact on the future of a species is the most valuable part of your journey.<br><br>
+                You can start your legacy today, from anywhere in the world. Remotely adopt a wild animal through our exclusive app, gaining access to its profile, health updates, and real-time tracking data. Want a closer look? Order live, non-invasive drone footage to watch them roam freely in their natural habitat. You can name a younger animal like a baby rhino calf, a lion cub, or a giraffe calf and receive personalized updates on its health and growth.<br><br>
+                For the ultimate connection, you can travel and join the field. We'll take you to the heart of the action to meet the very animals you're protecting. You'll work alongside leading conservationists and veterinarians, helping with routine health checks, participating in a collaring and tracking project, or even joining an anti-poaching patrol. This isn't just an observation; you'll be a stakeholder, a part of the team, leaving your indelible mark on a species' future. Your legacy is tangible—a detailed report, a private photo album, and the profound knowledge that your actions directly contributed to a life. It's a purpose no one can duplicate and a story that will live on for generations.
+            </div>
+            <div class="legacy-img-block">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Orphaned%20rhino%20-%20adopt%20an%20animal.png" alt="Orphaned Rhino">
+                <img src="https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Rhino%20tracking%20-%20adopt%20an%20animal.png" alt="Rhino Tracking">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="cta-title">The Ultimate Safari is Built, Not Found</h2>
+        <div class="cta-desc">
+            Our team of expert curators will work with you to craft a journey that is entirely your own. From the aircraft you fly in to the exact moments you'll witness, every detail is meticulously planned to ensure your trip is seamless, unforgettable, and entirely unique.
+        </div>
+        <a href="contact.html" class="btn-primary">Begin Your Legacy</a>
+    </section>
+    <!-- Footer -->
+    <footer class='footer'>
+        <div class='footer-grid'>
+            <div class="footer-brand">
+                <a href='/' class='footer-logo'>ONAYI</a>
+                <p class='footer-about'>Crafting unrepeatable moments across Africa's most extraordinary locations. For those who seek more than destinations.</p>
+                <div class='social-links'>
+                    <a href='#'><i class='fab fa-instagram'></i></a>
+                    <a href='#'><i class='fab fa-twitter'></i></a>
+                    <a href='#'><i class='fab fa-facebook'></i></a>
+                    <a href='#'><i class='fab fa-linkedin'></i></a>
+                </div>
+            </div>
+            <div class='footer-col'>
+                <h3 class='footer-title'>Explore</h3>
+                <ul class='footer-links'>
+                    <li><a href='experiences.html'>Signature Experiences</a></li>
+                    <li><a href='safari-redefined.html'>Safari Redefined</a></li>
+                    <li><a href='paranormal.html'>Paranormal Journeys</a></li>
+                    <li><a href='gallery.html'>Gallery</a></li>
+                    <li><a href='experiences.html'>Epic Safari</a></li>
+                </ul>
+            </div>
+            <div class='footer-col'>
+                <h3 class='footer-title'>Onayi</h3>
+                <ul class='footer-links'>
+                    <li><a href='about.html'>About You</a></li>
+                    <li><a href='shop.html'>Curio Shop</a></li>
+                    <li><a href='gallery.html'>Gallery</a></li>
+                    <li><a href='#'>Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class='footer-col'>
+                <h3 class='footer-title'>Contact Us</h3>
+                <ul class='footer-links'>
+                    <li><a href='mailto:curator@anoqi.africa'>curator@anoqi.africa</a></li>
+                    <li><a href='tel:+27111222333'>+263710309994</a></li>
+                    <li><a href='contact.html'>Bespoke Request</a></li>
+                    <li><a href='#'>24/7 Emergency Line</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class='footer-bottom'>
+            <p>&copy; 2025 Onayi Africa. All experiences are subject to availability. We craft journeys your friends can't copy. | Designed for the Unrepeatable Life</p>
+        </div>
+    </footer>
+</body>
+</html>
