@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onayi Africa | Beyond Imagination</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>●</text></svg>" type="image/svg+xml" style="color: #D4AF37;">
+    <!-- Favicon & Fonts -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23D4AF37%22/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --sapphire: #0A2463;
@@ -75,82 +76,102 @@
             background: rgba(12, 12, 22, 0.95);
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
         }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 2px;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo::after {
-            content: '';
-            display: block;
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin-left: 12px;
-            animation: pulse 2s infinite;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 40px;
-            position: relative;
-        }
-        
-        .nav-menu a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            color: var(--ivory);
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-            transition: all 0.4s;
-            position: relative;
-            text-transform: uppercase;
-            padding: 10px 0;
-            opacity: 0.9;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--gold);
-            opacity: 1;
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            bottom: 0;
-            left: 0;
-            transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Reduced padding */
+    flex-wrap: wrap; /* allows wrapping if needed */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* logo never shrinks */
+}
+
+.logo::after {
+    content: '';
+    width: 8px; 
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-left: 12px;
+    animation: pulse 2s infinite;
+}
+
+.nav-menu { 
+    display: flex; 
+    list-style: none; 
+    flex-shrink: 1; 
+    min-width: 0; /* lets nav shrink properly */
+    justify-content: flex-end;
+    flex-wrap: wrap; /* prevents overflow */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li { 
+    margin-left: 25px; /* smaller gap for flexibility */
+    position: relative; 
+}
+
+.nav-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: all 0.4s;
+    position: relative;
+    text-transform: uppercase;
+    padding: 10px 0;
+    opacity: 0.9;
+    white-space: nowrap; /* prevents awkward line breaks */
+}
+
+.nav-menu li a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+.nav-menu li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .28s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);}
+    70%  { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);}
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);}
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .nav-menu li { margin-left: 18px; }
+  .nav-menu a { font-size: 11px; }
+}
+
+@media (max-width: 992px) {
+  .nav-menu { display: none; } /* fallback: replace with hamburger menu */
+}
         
         /* Hero Section */
         .hero {
@@ -497,7 +518,7 @@
         /* Ritual Section */
         .ritual-section {
             padding: 150px 5%;
-            background: var(--velvet);
+            background: url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Safari%20popup%20large.png');
             position: relative;
             overflow: hidden;
         }
