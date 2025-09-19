@@ -59,72 +59,103 @@
             box-shadow: 0 2px 30px rgba(0,0,0,0.09);
             border-bottom: 1px solid rgba(212,175,55,0.12);
             backdrop-filter: blur(12px);
-        }
+            }
+        
         .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px; /* Reduced padding */
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-        }
-        .logo::after {
-            content: '';
-            width: 8px; height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin-left: 12px;
-            animation: pulse 2s infinite;
-        }
-        .nav-menu { 
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Reduced padding */
+    flex-wrap: wrap; /* allows wrapping if needed */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* logo never shrinks */
+}
+
+.logo::after {
+    content: '';
+    width: 8px; 
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-left: 12px;
+    animation: pulse 2s infinite;
+}
+
+.nav-menu { 
     display: flex; 
     list-style: none; 
     flex-shrink: 1; 
-    min-width: 0; /* allows items to shrink inside flexbox */ 
+    min-width: 0; /* lets nav shrink properly */
+    justify-content: flex-end;
+    flex-wrap: wrap; /* prevents overflow */
+    margin: 0;
+    padding: 0;
 }
-        .nav-menu li { margin-left: 40px; position: relative; }
-        .nav-menu a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            color: var(--ivory);
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            transition: all 0.4s;
-            position: relative;
-            text-transform: uppercase;
-            padding: 10px 0;
-            opacity: 0.9;
-        }
-        .nav-menu li a:hover {
-            color: var(--gold);
-            opacity: 1;
-        }
-        .nav-menu li a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width .28s;
-        }
-        .nav-menu li a:hover::after {
-            width: 100%;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);}
-            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);}
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);}
-        }
+
+.nav-menu li { 
+    margin-left: 25px; /* smaller gap for flexibility */
+    position: relative; 
+}
+
+.nav-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: all 0.4s;
+    position: relative;
+    text-transform: uppercase;
+    padding: 10px 0;
+    opacity: 0.9;
+    white-space: nowrap; /* prevents awkward line breaks */
+}
+
+.nav-menu li a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+.nav-menu li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .28s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);}
+    70%  { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);}
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);}
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .nav-menu li { margin-left: 18px; }
+  .nav-menu a { font-size: 11px; }
+}
+
+@media (max-width: 992px) {
+  .nav-menu { display: none; } /* fallback: replace with hamburger menu */
+}
 
         /* Hero Section */
         .hero-section {
