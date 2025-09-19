@@ -68,58 +68,102 @@
             background: rgba(12, 12, 22, 0.95);
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
         }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-        .logo {
-            font-family: 'Montserrat', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 2px;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        .logo::after {
-            content: '';
-            display: block;
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin-left: 12px;
-            animation: pulse 2s infinite;
-        }
-        .nav-menu { display: flex; list-style: none; }
-        .nav-menu li { margin-left: 40px; position: relative; }
-        .nav-menu a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            color: var(--ivory);
-            text-decoration: none;
-            font-size: 15px;
-            letter-spacing: 1.5px;
-            transition: all 0.4s;
-            position: relative;
-            text-transform: uppercase;
-            padding: 10px 0;
-            opacity: 0.9;
-        }
-        .nav-menu a:hover {
-            color: var(--gold);
-            opacity: 1;
-        }
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            bottom: 0;
-            left: 0;
-            transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-        }
-        .nav-menu a:hover::after { width: 100%; }
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Reduced padding */
+    flex-wrap: wrap; /* allows wrapping if needed */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* logo never shrinks */
+}
+
+.logo::after {
+    content: '';
+    width: 8px; 
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-left: 12px;
+    animation: pulse 2s infinite;
+}
+
+.nav-menu { 
+    display: flex; 
+    list-style: none; 
+    flex-shrink: 1; 
+    min-width: 0; /* lets nav shrink properly */
+    justify-content: flex-end;
+    flex-wrap: wrap; /* prevents overflow */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li { 
+    margin-left: 25px; /* smaller gap for flexibility */
+    position: relative; 
+}
+
+.nav-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: all 0.4s;
+    position: relative;
+    text-transform: uppercase;
+    padding: 10px 0;
+    opacity: 0.9;
+    white-space: nowrap; /* prevents awkward line breaks */
+}
+
+.nav-menu li a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+.nav-menu li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .28s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);}
+    70%  { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);}
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);}
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .nav-menu li { margin-left: 18px; }
+  .nav-menu a { font-size: 11px; }
+}
+
+@media (max-width: 992px) {
+  .nav-menu { display: none; } /* fallback: replace with hamburger menu */
+}
 
         /* Super-Premium Hero Section */
         .paranormal-hero {
@@ -659,37 +703,51 @@
             display: block;
             animation: fadeIn 0.3s;
         }
+        
         /* Footer */
         .footer {
             background: var(--obsidian);
             color: var(--ivory);
-            padding: 100px 0 50px;
+            padding: 100px 5% 50px;
             position: relative;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
+        
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 60px;
-            margin-bottom: 60px;
+            max-width: 1600px;
+            margin: 0 auto 60px;
         }
-        .footer-brand { display: flex; flex-direction: column;}
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .footer-logo {
-            font-family: 'Montserrat', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 32px;
             font-weight: 700;
             color: var(--gold);
             margin-bottom: 25px;
             display: inline-block;
         }
+        
         .footer-about {
-            font-size: 16px;
+            font-size: 16.8px; /* Increased by 5% */
             line-height: 1.8;
             opacity: 0.8;
             margin-bottom: 30px;
             max-width: 400px;
         }
-        .social-links { display: flex; gap: 20px;}
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
         .social-links a {
             width: 45px;
             height: 45px;
@@ -702,21 +760,24 @@
             font-size: 18px;
             transition: all 0.3s;
         }
+        
         .social-links a:hover {
             background: var(--gold);
             color: var(--charcoal);
             transform: translateY(-5px);
         }
+        
         .footer-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 18.9px; /* Increased by 5% */
             margin-bottom: 25px;
             letter-spacing: 1px;
             text-transform: uppercase;
             position: relative;
             padding-bottom: 10px;
         }
+        
         .footer-title::after {
             content: '';
             position: absolute;
@@ -726,29 +787,40 @@
             bottom: 0;
             left: 0;
         }
-        .footer-links { list-style: none; padding: 0;}
-        .footer-links li { margin-bottom: 15px;}
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
         .footer-links a {
             color: var(--ivory);
             text-decoration: none;
             opacity: 0.8;
             transition: all 0.3s;
-            font-size: 17px;
+            font-size: 17.85px; /* Increased by 5% */
             display: inline-block;
         }
+        
         .footer-links a:hover {
             opacity: 1;
             color: var(--gold);
             transform: translateX(5px);
         }
+        
         .footer-bottom {
             text-align: center;
             padding-top: 50px;
             margin-top: 50px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 15px;
+            font-size: 15.75px; /* Increased by 5% */
             opacity: 0.6;
         }
+        
         /* Floating Curator Button */
         .floating-curator {
             position: fixed;
@@ -804,21 +876,24 @@
     <a href="contact.html" class="floating-curator">
         <i class="fas fa-compass"></i>
     </a>
-    <!-- Header & Navigation -->
-    <header class='header' id='header'>
-        <div class='nav-container'>
-            <a href='/' class='logo'>ONAYI</a>
-            <ul class='nav-menu'>
-                <li><a href='experiences.html'>Experiences</a></li>
-                <li><a href='paranormal.html'>Paranormal</a></li>
-                <li><a href='gallery.html'>Gallery</a></li>
-                <li><a href='about.html'>About You</a></li>
-                <li><a href='shop.html'>Curio Shop</a></li>
-                <li><a href='blog.html'>Blog</a></li>
-                <li><a href='contact.html'>Contact</a></li>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">ONAYI</a>
+            <ul class="nav-menu">
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="safari-redefined.html">Safari Redefined</a></li>
+                <li><a href="paranormal.html">Paranormal</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About You</a></li>
+                <li><a href="shop.html">Curio Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </header>
+    
     <!-- Hero Section -->
     <section class='paranormal-hero'>
         <div class='hero-content'>
@@ -835,8 +910,8 @@
     </section>
     <!-- Optional Welcome Section -->
     <section class="welcome-section">
-        <h2 class="welcome-title">Not All Who Wander Are Lost—Some Are Called.</h2>
-        <p class="welcome-text">Do you believe in ghosts? In Africa, it doesn’t matter. The spirits believe in you. And what brings you here? A longing for something the world can’t explain? Good. You’re exactly who we’re looking for.
+        <h2 class="welcome-title">Do you believe in ghosts? In Africa, it doesn’t matter. The spirits believe in you.</h2>
+        <p class="welcome-text">So, what brings you here? A longing for something the world can’t explain? Good. You’re exactly who we’re looking for.
         </p>
     </section>
     <!-- Sacred Encounters Section -->
@@ -1233,7 +1308,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Is it safe?</div>
-                    <div class="faq-answer">Your safety and dignity come first. All rituals are conducted with full local consent and guidance. Our team is with you every step of the journey.</div>
+                    <div class="faq-answer">Your safety and dignity come first. All rituals are conducted with full local consent and guidance. It's community immersion with a supernatural twist. Our team is with you every step of the journey.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">What does it cost?</div>
@@ -1250,6 +1325,7 @@
             <a href="contact.html" class="btn btn-primary">Request Your Paranormal Journey</a>
         </div>
     </section>
+    
     <!-- Footer -->
     <footer class='footer'>
         <div class='footer-grid'>
@@ -1266,11 +1342,10 @@
             <div class='footer-col'>
                 <h3 class='footer-title'>Explore</h3>
                 <ul class='footer-links'>
-                    <li><a href='experiences.html'>Signature Experiences</a></li>
+                    <li><a href='experiences.html'>Experiences</a></li>
+                    <li><a href='safari-redefined.html'>Safari Redefined</a></li>
                     <li><a href='paranormal.html'>Paranormal Journeys</a></li>
                     <li><a href='gallery.html'>Gallery</a></li>
-                    <li><a href='experiences.html'>Epic Safari</a></li>
-                    <li><a href='#'>Insane Locations</a></li>
                 </ul>
             </div>
             <div class='footer-col'>
@@ -1278,14 +1353,14 @@
                 <ul class='footer-links'>
                     <li><a href='about.html'>About You</a></li>
                     <li><a href='shop.html'>Curio Shop</a></li>
-                    <li><a href='gallery.html'>Gallery</a></li>
-                    <li><a href='#'>Privacy Policy</a></li>
+                    <li><a href='blog.html'>Blog</a></li>
+                    <li><a href='legal.html'>Legal</a></li>
                 </ul>
             </div>
             <div class='footer-col'>
                 <h3 class='footer-title'>Contact Us</h3>
                 <ul class='footer-links'>
-                    <li><a href='mailto:curator@anoqi.africa'>curator@anoqi.africa</a></li>
+                    <li><a href='mailto:curator@anoqi.africa'>georgec.ignite@gmail.com</a></li>
                     <li><a href='tel:+27111222333'>+263710309994</a></li>
                     <li><a href='contact.html'>Bespoke Request</a></li>
                     <li><a href='#'>24/7 Emergency Line</a></li>
@@ -1296,35 +1371,6 @@
             <p>&copy; 2025 Onayi Africa. All experiences are subject to availability. We craft journeys your friends can't copy. | Designed for the Unrepeatable Life</p>
         </div>
     </footer>
-    <script>
-        // Sticky Header
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) { header.classList.add('scrolled'); }
-            else { header.classList.remove('scrolled'); }
-        });
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        // Floating button interaction
-        const floatingBtn = document.querySelector('.floating-curator');
-        floatingBtn.addEventListener('click', function() {
-            window.location.href = 'contact.html';
-        });
-        // Interactive FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', function() {
-                const item = this.parentElement;
-                item.classList.toggle('active');
-                document.querySelectorAll('.faq-item').forEach(other => {
-                    if (other !== item) other.classList.remove('active');
-                });
-            });
-        });
-    </script>
+    <!-- No JS needed for hover cards -->
 </body>
 </html>
