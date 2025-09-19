@@ -85,7 +85,12 @@
             margin-left: 12px;
             animation: pulse 2s infinite;
         }
-        .nav-menu { display: flex; list-style: none; }
+        .nav-menu { 
+    display: flex; 
+    list-style: none; 
+    flex-shrink: 1; 
+    min-width: 0; /* allows items to shrink inside flexbox */ 
+}
         .nav-menu li { margin-left: 40px; position: relative; }
         .nav-menu a {
             font-family: 'Montserrat', sans-serif;
