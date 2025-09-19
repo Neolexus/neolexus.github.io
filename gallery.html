@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onayi Africa | Gallery</title>
-    <!-- Gold Dot Favicon -->
+    <!-- Favicon & Fonts -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2212%22%20fill%3D%22%23D4AF37%22/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --sapphire: #0A2463;
@@ -41,70 +41,102 @@
             background: rgba(12, 12, 22, 0.95);
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
         }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-        }
-        .logo::after {
-            content: '';
-            display: block;
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin-left: 12px;
-            animation: pulse 2s infinite;
-        }
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        .nav-menu li {
-            margin-left: 40px;
-            position: relative;
-        }
-        .nav-menu a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            color: var(--ivory);
-            text-decoration: none;
-            font-size: 15px;
-            letter-spacing: 1.5px;
-            transition: all 0.4s;
-            position: relative;
-            text-transform: uppercase;
-            padding: 10px 0;
-            opacity: 0.9;
-        }
-        .nav-menu a:hover {
-            color: var(--gold);
-            opacity: 1;
-        }
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            bottom: 0;
-            left: 0;
-            transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-        }
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Reduced padding */
+    flex-wrap: wrap; /* allows wrapping if needed */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* logo never shrinks */
+}
+
+.logo::after {
+    content: '';
+    width: 8px; 
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-left: 12px;
+    animation: pulse 2s infinite;
+}
+
+.nav-menu { 
+    display: flex; 
+    list-style: none; 
+    flex-shrink: 1; 
+    min-width: 0; /* lets nav shrink properly */
+    justify-content: flex-end;
+    flex-wrap: wrap; /* prevents overflow */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li { 
+    margin-left: 25px; /* smaller gap for flexibility */
+    position: relative; 
+}
+
+.nav-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    transition: all 0.4s;
+    position: relative;
+    text-transform: uppercase;
+    padding: 10px 0;
+    opacity: 0.9;
+    white-space: nowrap; /* prevents awkward line breaks */
+}
+
+.nav-menu li a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+.nav-menu li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .28s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);}
+    70%  { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);}
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);}
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .nav-menu li { margin-left: 18px; }
+  .nav-menu a { font-size: 11px; }
+}
+
+@media (max-width: 992px) {
+  .nav-menu { display: none; } /* fallback: replace with hamburger menu */
+}
         .gallery-hero {
             height: 400px;
             background: linear-gradient(rgba(10,36,99,.72), rgba(10,36,99,0.7)), url('https://raw.githubusercontent.com/Neolexus/neolexus.github.io/refs/heads/main/Opera%20beneath%20Elephant%20skies.jpg') center center/cover no-repeat;
@@ -388,24 +420,27 @@
 </head>
 <body>
     <!-- Floating Curator Button -->
-    <a href="concierge.html" class="floating-curator">
+    <a href="contact.html" class="floating-curator">
         <i class="fas fa-compass"></i>
     </a>
-    <!-- Header & Navigation -->
-    <header class='header' id='header'>
-        <div class='nav-container'>
-            <a href='/' class='logo'>ONAYI</a>
-            <ul class='nav-menu'>
-                <li><a href='experiences.html'>Experiences</a></li>
-                <li><a href='paranormal.html'>Paranormal</a></li>
-                <li><a href='gallery.html'>Gallery</a></li>
-                <li><a href='about.html'>About You</a></li>
-                <li><a href='shop.html'>Curio Shop</a></li>
-                <li><a href='blog.html'>Blog</a></li>
-                <li><a href='contact.html'>Contact</a></li>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">ONAYI</a>
+            <ul class="nav-menu">
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="safari-redefined.html">Safari Redefined</a></li>
+                <li><a href="paranormal.html">Paranormal</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About You</a></li>
+                <li><a href="shop.html">Curio Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </header>
+    
     <!-- Hero -->
     <section class="gallery-hero">
         <div class="gallery-hero-content">
@@ -593,6 +628,7 @@
             <div class="modal-caption" id="modal-caption"></div>
         </div>
     </section>
+    
     <!-- Footer -->
     <footer class='footer'>
         <div class='footer-grid'>
@@ -609,11 +645,10 @@
             <div class='footer-col'>
                 <h3 class='footer-title'>Explore</h3>
                 <ul class='footer-links'>
-                    <li><a href='experiences.html'>Signature Experiences</a></li>
+                    <li><a href='experiences.html'>Experiences</a></li>
+                    <li><a href='safari-redefined.html'>Safari Redefined</a></li>
                     <li><a href='paranormal.html'>Paranormal Journeys</a></li>
                     <li><a href='gallery.html'>Gallery</a></li>
-                    <li><a href='experiences.html'>Epic Safari</a></li>
-                    <li><a href='#'>Insane Locations</a></li>
                 </ul>
             </div>
             <div class='footer-col'>
@@ -621,14 +656,14 @@
                 <ul class='footer-links'>
                     <li><a href='about.html'>About You</a></li>
                     <li><a href='shop.html'>Curio Shop</a></li>
-                    <li><a href='gallery.html'>Gallery</a></li>
-                    <li><a href='#'>Privacy Policy</a></li>
+                    <li><a href='blog.html'>Blog</a></li>
+                    <li><a href='legal.html'>Legal</a></li>
                 </ul>
             </div>
             <div class='footer-col'>
                 <h3 class='footer-title'>Contact Us</h3>
                 <ul class='footer-links'>
-                    <li><a href='mailto:curator@anoqi.africa'>curator@anoqi.africa</a></li>
+                    <li><a href='mailto:curator@anoqi.africa'>georgec.ignite@gmail.com</a></li>
                     <li><a href='tel:+27111222333'>+263710309994</a></li>
                     <li><a href='contact.html'>Bespoke Request</a></li>
                     <li><a href='#'>24/7 Emergency Line</a></li>
@@ -639,60 +674,6 @@
             <p>&copy; 2025 Onayi Africa. All experiences are subject to availability. We craft journeys your friends can't copy. | Designed for the Unrepeatable Life</p>
         </div>
     </footer>
-    <script>
-        // Sticky Header
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Floating button interaction
-        const floatingBtn = document.querySelector('.floating-curator');
-        floatingBtn.addEventListener('click', function() {
-            window.location.href = 'contact.html';
-        });
-
-        // Gallery Lightbox
-        const modal = document.getElementById('gallery-modal');
-        const modalImg = document.getElementById('modal-img');
-        const modalCaption = document.getElementById('modal-caption');
-        const closeModal = document.getElementById('modal-close');
-        document.querySelectorAll('.gallery-img-container').forEach(function(container) {
-            container.addEventListener('click', function() {
-                modalImg.src = this.querySelector('img').src;
-                modalImg.alt = this.querySelector('img').alt;
-                modalCaption.textContent = this.getAttribute('data-caption') || '';
-                modal.classList.add('active');
-            });
-            container.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    modalImg.src = this.querySelector('img').src;
-                    modalImg.alt = this.querySelector('img').alt;
-                    modalCaption.textContent = this.getAttribute('data-caption') || '';
-                    modal.classList.add('active');
-                }
-            });
-        });
-        closeModal.addEventListener('click', function() {
-            modal.classList.remove('active');
-            setTimeout(() => { modalImg.src = ''; }, 250);
-        });
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                setTimeout(() => { modalImg.src = ''; }, 250);
-            }
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                modal.classList.remove('active');
-                setTimeout(() => { modalImg.src = ''; }, 250);
-            }
-        });
-    </script>
+    <!-- No JS needed for hover cards -->
 </body>
 </html>
