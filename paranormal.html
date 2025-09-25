@@ -870,6 +870,25 @@
             .charm-card { padding: 22px 8px;}
         }
     </style>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach(question => {
+        question.addEventListener("click", () => {
+            const faqItem = question.closest(".faq-item");
+
+            // Close other items if you want only one open at a time
+            // document.querySelectorAll(".faq-item").forEach(item => {
+            //     if (item !== faqItem) item.classList.remove("active");
+            // });
+
+            // Toggle current item
+            faqItem.classList.toggle("active");
+        });
+    });
+});
+</script>
 </head>
 <body>
     <!-- Floating Curator Button -->
