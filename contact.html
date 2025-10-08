@@ -9,6 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+.toast {
+  visibility: hidden;
+  min-width: 280px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px 20px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
+}
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 60px;
+}
+.toast.success {
+  background-color: #28a745;
+}
+.toast.error {
+  background-color: #dc3545;
+}
+</style>
+
+    <style>
         :root {
             --sapphire: #0A2463;
             --gold: #D4AF37;
@@ -739,6 +770,45 @@
             }
         }
     </style>
+
+  <!-- Toast container -->
+<div id="toast" class="toast"></div>
+
+<script>
+function showToast(message, type = "success") {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.className = "toast show " + type;
+
+  setTimeout(() => {
+    toast.className = "toast";
+  }, 4000); // Toast stays for 4 seconds
+}
+
+document.getElementById('contactForm').addEventListener('submit', async function (event) {
+  event.preventDefault();
+  const form = event.target;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.reset();
+      showToast("✅ Message sent successfully!", "success");
+    } else {
+      showToast("⚠️ Something went wrong. Please try again.", "error");
+    }
+  } catch (error) {
+    showToast("❌ Network error. Please try again later.", "error");
+  }
+});
+</script>
+
 </head>
 <body>
     <!-- Floating Curator Button -->
@@ -834,73 +904,62 @@
                 </div>
                 
                 <div class="contact-form">
-                    <h2 class="form-title">Request Your Consultation</h2>
-                    <form>
-                        <form  action="https://formspree.io/f/xwprnnoj" method="POST">
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-                          <div class="form-group">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" class="form-control" placeholder="How may we address you?">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-control" placeholder="Your private correspondence">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="Including country code">
-                        </div>
-                        
-                        <div class="form-group experience-select">
-                            <label class="form-label">Experience Interest</label>
-                            <select class="form-control">
-                                <option selected>Select your journey archetype</option>
-                                <option>Fully Bespoke Journey</option>
-                                <option>Paranormal Expeditions</option>
-                                <option>Wellness Tourism</option>
-                                <option>Safari Redefined</option>
-                                <option>Sporting in Otherworldly Places</option>
-                                <option>Adrenaline Experiences</option>
-                                <option>Forbidden Africa</option>
-                                <option>VillageBnB</option>
-                                <option>Oldsmobile Road Trips</option>
-                                <option>Epic Hiking</option>
-                                <option>Conservation Tours</option>
-                                <option>Spiritual Tourism</option>
-                                <option>Agro-Tourism</option>
-                                <option>Archaeology</option>
-                                <option>Cave Stays</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Desired Travel Dates</label>
-                            <input type="text" class="form-control" placeholder="Flexible or specific timeframe">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Your Vision</label>
-                            <textarea class="form-control" placeholder="Tell us about your dream experience, must-have elements, and what transformation you seek"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+                    
+  <h2 class="form-title">Request Your Consultation</h2>
+
+  <form id="contactForm" action="https://formspree.io/f/xwprnnoj" method="POST">
+    <div class="form-group">
+      <label class="form-label">Full Name</label>
+      <input type="text" name="name" class="form-control" placeholder="How may we address you?" required>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email Address</label>
+      <input type="email" name="email" class="form-control" placeholder="Your private correspondence" required>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Phone Number</label>
+      <input type="tel" name="phone" class="form-control" placeholder="Including country code">
+    </div>
+
+    <div class="form-group experience-select">
+      <label class="form-label">Experience Interest</label>
+      <select name="interest" class="form-control" required>
+        <option selected>Select your journey archetype</option>
+        <option>Fully Bespoke Journey</option>
+        <option>Paranormal Expeditions</option>
+        <option>Wellness Tourism</option>
+        <option>Safari Redefined</option>
+        <option>Sporting in Otherworldly Places</option>
+        <option>Adrenaline Experiences</option>
+        <option>Forbidden Africa</option>
+        <option>VillageBnB</option>
+        <option>Oldsmobile Road Trips</option>
+        <option>Epic Hiking</option>
+        <option>Conservation Tours</option>
+        <option>Spiritual Tourism</option>
+        <option>Agro-Tourism</option>
+        <option>Archaeology</option>
+        <option>Cave Stays</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Desired Travel Dates</label>
+      <input type="text" name="dates" class="form-control" placeholder="Flexible or specific timeframe">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Your Vision</label>
+      <textarea name="vision" class="form-control" placeholder="Tell us about your dream experience, must-have elements, and what transformation you seek"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+    </div>
+  </form>
+</div>
 
     <!-- Process Section -->
     <section class="process-section">
