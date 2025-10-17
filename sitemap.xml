@@ -7,49 +7,49 @@
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>https://neolexus.github.io/experiences.html</loc>
+    <loc>https://neolexus.github.io/experiences/</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 <url>
-    <loc>https://neolexus.github.io/safari-redefined.html</loc>
+    <loc>https://neolexus.github.io/safari-redefined/</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 <url>
-    <loc>https://neolexus.github.io/paranormal.html</loc>
+    <loc>https://neolexus.github.io/paranormal/</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://neolexus.github.io/gallery/</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://neolexus.github.io/shop/</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 <url>
-    <loc>https://neolexus.github.io/gallery.html</loc>
+    <loc>https://neolexus.github.io/about/</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 <url>
-    <loc>https://neolexus.github.io/shop.html</loc>
+    <loc>https://neolexus.github.io/blog/</loc>
     <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>bi-monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 <url>
-    <loc>https://neolexus.github.io/about.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-<url>
-    <loc>https://neolexus.github.io/blog.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-<url>
-    <loc>https://neolexus.github.io/contact.html</loc>
+    <loc>https://neolexus.github.io/contact/</loc>
     <lastmod>2025-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
